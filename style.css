@@ -18,11 +18,12 @@ html, body {
 
 canvas#matrix {
   position: fixed;
-  inset: 0;
+  top: 0;
+  left: 0;
   width: 100vw !important;
   height: 100vh !important;
-  z-index: 0 !important;
-  pointer-events: none;
+  z-index: -1 !important;      /* IMPORTANTE: -1 coloca atrás do conteúdo */
+  pointer-events: none !important; /* Permite clicar nos elementos acima */
   display: block;
   background: transparent !important;
   opacity: 1 !important;
@@ -281,6 +282,7 @@ footer {
     height: 150px;
   }
 }
+
 
 
 
