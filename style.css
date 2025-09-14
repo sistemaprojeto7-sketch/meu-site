@@ -160,6 +160,18 @@ header nav a:hover {
   transition: 0.3s;
   box-shadow: 0 2px 16px #000a;
 }
+.card p {
+  margin-bottom: 1rem; /* separa o texto da lista */
+}
+
+.card ul {
+  margin-top: 0; /* garante que não vai colar muito no p */
+  padding-left: 1.2rem; /* recuo opcional dos bullets */
+}
+
+.card ul li {
+  margin-bottom: 0.5rem; /* espaço entre os itens da lista */
+}
 
 .card:hover {
   transform: translateY(-6px);
@@ -289,6 +301,7 @@ footer {
     height: 150px;
   }
 }
+
 
 
 
