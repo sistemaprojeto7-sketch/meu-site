@@ -132,6 +132,23 @@ header nav a:hover {
   line-height: 1.6;
 }
 
+#sobre-mim {
+  display: flex;
+  justify-content: center; /* centraliza horizontalmente */
+  padding: 60px 5%;
+}
+
+#sobre-mim .card {
+  max-width: 700px;  /* limita a largura */
+  width: 100%;       /* responsivo */
+  text-align: left;
+  border: 1px solid #00ff99;
+  background: rgba(15, 25, 30, 0.9);
+  box-shadow: 0 4px 20px #00ff9933;
+  padding: 2rem;
+}
+
+
 /* ===========================
    PORTFÓLIO
 =========================== */
@@ -301,6 +318,7 @@ footer {
     height: 150px;
   }
 }
+
 
 
 
