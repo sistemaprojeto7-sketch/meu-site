@@ -149,7 +149,7 @@ header nav a:hover {
 }
 
 /* ===========================
-   PORTFÓLIO OTIMIZADO
+   PORTFÓLIO OTIMIZADO FINAL
 =========================== */
 #portfolio {
   padding: 6rem 2rem;
@@ -164,48 +164,50 @@ header nav a:hover {
 
 .portfolio-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); /* cards menores para caber mais */
-  gap: 1rem; /* menos espaço entre os cards */
-  justify-items: center; /* centraliza os cards */
-  padding: 0 1rem; /* espaçamento lateral */
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;           /* menos espaço entre os cards */
+  justify-content: center; /* centraliza a grid no container */
+  padding: 0 1rem;
 }
 
-.card {
+.portfolio-grid .card {
   background: rgba(15, 25, 30, 0.88);
   border: 1px solid rgba(0, 255, 153, 0.18);
   border-radius: 14px;
-  padding: 1.5rem; /* espaço interno menor */
+  padding: 1.5rem;       /* espaço interno menor */
   box-shadow: 0 2px 16px #000a;
   transition: 0.3s;
   width: 100%;
-  max-width: 280px; /* largura máxima */
+  max-width: 280px;       /* largura máxima */
+  text-align: left;
 }
 
-.card h3 {
+.portfolio-grid .card h3 {
   color: #00ff99;
-  margin-bottom: 0.8rem; /* título mais próximo do conteúdo */
+  margin-bottom: 0.8rem;
   font-size: 1.1rem;
 }
 
-.card p {
-  margin-bottom: 0.6rem; /* texto mais compacto */
+.portfolio-grid .card p {
+  margin-bottom: 0.6rem;
   font-size: 0.95rem;
   color: #e0e0e0;
 }
 
-.card ul {
+.portfolio-grid .card ul {
   padding-left: 1rem;
   margin-top: 0.5rem;
 }
 
-.card ul li {
-  margin-bottom: 0.3rem; /* lista compacta */
+.portfolio-grid .card ul li {
+  margin-bottom: 0.3rem;
 }
 
-.card:hover {
+.portfolio-grid .card:hover {
   transform: translateY(-4px);
   border-color: #00ff99;
 }
+
 
 
 /* ===========================
@@ -321,6 +323,7 @@ footer {
     height: 150px;
   }
 }
+
 
 
 
