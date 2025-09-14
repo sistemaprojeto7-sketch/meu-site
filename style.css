@@ -148,9 +148,8 @@ header nav a:hover {
   padding: 2rem;
 }
 
-
 /* ===========================
-   PORTFÓLIO
+   PORTFÓLIO OTIMIZADO
 =========================== */
 #portfolio {
   padding: 6rem 2rem;
@@ -160,15 +159,14 @@ header nav a:hover {
 #portfolio h2 {
   font-size: 2.2rem;
   color: #00ff99;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 
-/* PORTFÓLIO OTIMIZADO */
 .portfolio-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); /* cards menores para caber mais */
-  gap: 0.8rem; /* menos espaço entre os cards */
-  justify-items: center; /* centraliza os cards na grid */
+  gap: 1rem; /* menos espaço entre os cards */
+  justify-items: center; /* centraliza os cards */
   padding: 0 1rem; /* espaçamento lateral */
 }
 
@@ -176,23 +174,37 @@ header nav a:hover {
   background: rgba(15, 25, 30, 0.88);
   border: 1px solid rgba(0, 255, 153, 0.18);
   border-radius: 14px;
-  padding: 1.5rem; /* um pouco menos que antes */
-  transition: 0.3s;
+  padding: 1.5rem; /* espaço interno menor */
   box-shadow: 0 2px 16px #000a;
-  width: 100%; /* garante responsividade */
-  max-width: 280px; /* evita cards muito largos */
-}
-
-.card p {
-  margin-bottom: 0.8rem; /* mais próximo da lista */
-}
-
-.card ul li {
-  margin-bottom: 0.3rem; /* menos espaço entre bullets */
+  transition: 0.3s;
+  width: 100%;
+  max-width: 280px; /* largura máxima */
 }
 
 .card h3 {
+  color: #00ff99;
   margin-bottom: 0.8rem; /* título mais próximo do conteúdo */
+  font-size: 1.1rem;
+}
+
+.card p {
+  margin-bottom: 0.6rem; /* texto mais compacto */
+  font-size: 0.95rem;
+  color: #e0e0e0;
+}
+
+.card ul {
+  padding-left: 1rem;
+  margin-top: 0.5rem;
+}
+
+.card ul li {
+  margin-bottom: 0.3rem; /* lista compacta */
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: #00ff99;
 }
 
 
@@ -309,6 +321,7 @@ footer {
     height: 150px;
   }
 }
+
 
 
 
