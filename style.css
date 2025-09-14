@@ -36,18 +36,17 @@ img {
 
 canvas#matrix {
   position: fixed;
-  top: 0;
-  left: 0;
+  inset: 0;
   width: 100vw !important;
   height: 100vh !important;
-  z-index: -1 !important;        /* Matrix sempre atrás */
+  z-index: -9999 !important; /* BEM negativo! */
   pointer-events: none !important;
   display: block;
   background: transparent !important;
-  opacity: 1 !important;
 }
-body {
+body, html {
   position: relative !important;
+  min-height: 100vh;
 }
 
 /* ===========================
@@ -283,6 +282,7 @@ footer {
     height: 150px;
   }
 }
+
 
 
 
