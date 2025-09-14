@@ -18,13 +18,17 @@ html, body {
 
 canvas#matrix {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  background: transparent;
+  inset: 0;
+  width: 100vw !important;
+  height: 100vh !important;
+  z-index: 0 !important;
+  pointer-events: none;
   display: block;
+  background: transparent !important;
+  opacity: 1 !important;
+}
+body {
+  position: relative !important;
 }
 
 html, body {
@@ -277,6 +281,7 @@ footer {
     height: 150px;
   }
 }
+
 
 
 
