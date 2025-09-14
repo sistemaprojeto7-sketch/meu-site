@@ -163,48 +163,38 @@ header nav a:hover {
   margin-bottom: 3rem;
 }
 
+/* PORTFÓLIO OTIMIZADO */
 .portfolio-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1rem; /* cards mais próximos */
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); /* cards menores para caber mais */
+  gap: 0.8rem; /* menos espaço entre os cards */
+  justify-items: center; /* centraliza os cards na grid */
+  padding: 0 1rem; /* espaçamento lateral */
 }
-
 
 .card {
-  background: rgba(15, 25, 30, 0.88); /* tom escuro e bastante opaco */
-  border: 1px solid rgba(0,255,153,0.18);
+  background: rgba(15, 25, 30, 0.88);
+  border: 1px solid rgba(0, 255, 153, 0.18);
   border-radius: 14px;
-  padding: 2rem;
+  padding: 1.5rem; /* um pouco menos que antes */
   transition: 0.3s;
   box-shadow: 0 2px 16px #000a;
-}
-.card p {
-  margin-bottom: 1rem; /* separa o texto da lista */
+  width: 100%; /* garante responsividade */
+  max-width: 280px; /* evita cards muito largos */
 }
 
-.card ul {
-  margin-top: 0; /* garante que não vai colar muito no p */
-  padding-left: 1.2rem; /* recuo opcional dos bullets */
+.card p {
+  margin-bottom: 0.8rem; /* mais próximo da lista */
 }
 
 .card ul li {
-  margin-bottom: 0.5rem; /* espaço entre os itens da lista */
-}
-
-.card:hover {
-  transform: translateY(-6px);
-  border-color: #00ff99;
+  margin-bottom: 0.3rem; /* menos espaço entre bullets */
 }
 
 .card h3 {
-  color: #00ff99;
-  margin-bottom: 1rem;
+  margin-bottom: 0.8rem; /* título mais próximo do conteúdo */
 }
 
-.card p {
-  font-size: 0.95rem;
-  color: #e0e0e0;
-}
 
 /* ===========================
    DEPOIMENTOS
@@ -319,6 +309,7 @@ footer {
     height: 150px;
   }
 }
+
 
 
 
