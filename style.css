@@ -16,22 +16,6 @@ html, body {
   box-sizing: border-box;
 }
 
-canvas#matrix {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw !important;
-  height: 100vh !important;
-  z-index: -1 !important;      /* IMPORTANTE: -1 coloca atrás do conteúdo */
-  pointer-events: none !important; /* Permite clicar nos elementos acima */
-  display: block;
-  background: transparent !important;
-  opacity: 1 !important;
-}
-body {
-  position: relative !important;
-}
-
 html, body {
   font-family: 'Segoe UI', system-ui, sans-serif;
   background: #000;
@@ -49,6 +33,23 @@ img {
   display: block;
   max-width: 100%;
 }
+
+canvas#matrix {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw !important;
+  height: 100vh !important;
+  z-index: -1 !important;        /* Matrix sempre atrás */
+  pointer-events: none !important;
+  display: block;
+  background: transparent !important;
+  opacity: 1 !important;
+}
+body {
+  position: relative !important;
+}
+
 /* ===========================
    HEADER / NAV
 =========================== */
@@ -62,7 +63,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 3rem;
-  z-index: 10;
+  z-index: 10;                  /* Header sempre acima do Matrix */
 }
 
 header .logo {
@@ -282,6 +283,7 @@ footer {
     height: 150px;
   }
 }
+
 
 
 
