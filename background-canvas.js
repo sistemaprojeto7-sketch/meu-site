@@ -7,16 +7,15 @@ function resizeCanvas() {
 }
 resizeCanvas();
 
-const letters = '0123456789アカサタナハマヤラワABCDEFGHIJKLMNOPQRSTUVWXYZ';
+const letters = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZアカサタナハマヤラワ';
 const fontSize = 18;
 let columns = Math.floor(canvas.width / fontSize);
 let drops = Array(columns).fill(1);
 
 function draw() {
-  ctx.fillStyle = 'rgba(0, 0, 0, 0.07)';
+  ctx.fillStyle = 'rgba(0,0,0,0.05)';
   ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-  ctx.fillStyle = '#00ffcc';
+  ctx.fillStyle = '#0f0';
   ctx.font = fontSize + 'px monospace';
 
   for (let i = 0; i < drops.length; i++) {
@@ -28,7 +27,6 @@ function draw() {
     }
     drops[i]++;
   }
-
   requestAnimationFrame(draw);
 }
 
