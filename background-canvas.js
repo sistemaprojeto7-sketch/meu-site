@@ -1,22 +1,18 @@
 const canvas = document.getElementById('matrix');
 const ctx = canvas.getContext('2d');
 
-// Configura canvas
-let width = canvas.width = window.innerWidth;
-let height = canvas.height = window.innerHeight;
+canvas.height = window.innerHeight;
+canvas.width = window.innerWidth;
 
 const letters = '0123456789アカサタナハマヤラワABCDEFGHIJKLMNOPQRSTUVWXYZ';
 const fontSize = 16;
-let columns = Math.floor(width / fontSize);
+const columns = canvas.width / fontSize;
 
-// Cria array de posições das colunas
-let drops = Array(columns).fill(1);
+const drops = Array(Math.floor(columns)).fill(1);
 
-// Função de desenho
 function draw() {
-  // Fundo sem apagar totalmente para criar o rastro
-  ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
-  ctx.fillRect(0, 0, width, height);
+  ctx.fillStyle = 'rgba(0, 0, 0, 0.1)';
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
 
   ctx.fillStyle = '#00ffcc';
   ctx.font = fontSize + 'px monospace';
@@ -25,25 +21,20 @@ function draw() {
     const text = letters.charAt(Math.floor(Math.random() * letters.length));
     ctx.fillText(text, i * fontSize, drops[i] * fontSize);
 
-    // Reinicia o drop aleatoriamente quando sai da tela
-    if (drops[i] * fontSize > height && Math.random() > 0.975) {
+    if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
       drops[i] = 0;
     }
     drops[i]++;
   }
-
-  requestAnimationFrame(draw); // mais leve que setInterval
 }
 
-// Inicializa
-draw();
+setInterval(draw, 35);
 
-// Ajusta canvas ao redimensionar
 window.addEventListener('resize', () => {
-  width = canvas.width = window.innerWidth;
-  height = canvas.height = window.innerHeight;
-  columns = Math.floor(width / fontSize);
-  drops = Array(columns).fill(1);
+  canvas.height = window.innerHeight;
+  canvas.width = window.innerWidth;
 });
+
+
 
 
