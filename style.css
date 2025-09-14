@@ -35,15 +35,19 @@ img {
 }
 
 /* ===========================
-   MATRIX BACKGROUND
+   MATRIX BACKGROUND OTIMIZADO
 =========================== */
 canvas#matrix {
   position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: #000;
-  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;          /* atrás de todo conteúdo */
+  background: transparent; /* transparente, não cobre os elementos */
+  display: block;
 }
+
 
 /* ===========================
    HEADER / NAV
@@ -278,3 +282,4 @@ footer {
     height: 150px;
   }
 }
+
