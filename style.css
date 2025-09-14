@@ -16,6 +16,17 @@ html, body {
   box-sizing: border-box;
 }
 
+/* MATRIX BACKGROUND */
+#matrix {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: #000;
+}
+
 html, body {
   font-family: 'Segoe UI', system-ui, sans-serif;
   background: #000;
@@ -33,22 +44,6 @@ img {
   display: block;
   max-width: 100%;
 }
-
-/* ===========================
-   MATRIX BACKGROUND OTIMIZADO
-=========================== */
-canvas#matrix {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;          /* atrás de todo conteúdo */
-  background: transparent; /* transparente, não cobre os elementos */
-  display: block;
-}
-
-
 /* ===========================
    HEADER / NAV
 =========================== */
@@ -282,4 +277,5 @@ footer {
     height: 150px;
   }
 }
+
 
