@@ -125,10 +125,8 @@ header nav a:hover {
 
 .hero-content {
   max-width: 600px;
-  /*background: rgba(0,255,153,0.05); */
-  background: rgba(15, 25, 30, 0.88);
-  border: 1px solid rgba(0, 255, 153, 0.18);
-  /*border: 1px solid rgba(0,255,153,0.2); */
+  background: rgba(15,25,30,0.07); 
+  border: 1px solid rgba(0,255,153,0.2); 
   padding: 2rem;
   border-radius: 14px;
   line-height: 1.6;
@@ -151,63 +149,60 @@ header nav a:hover {
 }
 
 /* ===========================
-   PORTFÓLIO FINAL CENTRALIZADO
+   PORTFÓLIO
 =========================== */
 #portfolio {
-  padding: 4rem 2rem;       /* menor padding para ficar mais compacto */
+  padding: 6rem 2rem;
   text-align: center;
 }
 
 #portfolio h2 {
   font-size: 2.2rem;
   color: #00ff99;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 }
 
 .portfolio-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1rem;                /* menor espaço entre os cards */
-  justify-content: center;   /* centraliza toda a grid */
-  padding: 0 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
 }
 
-.portfolio-grid .card {
-  max-width: 260px;          /* largura fixa para uniformidade */
-  width: 100%;
-  text-align: left;
-  background: rgba(15, 25, 30, 0.88);
-  border: 1px solid rgba(0, 255, 153, 0.18);
+.card {
+  background: rgba(15, 25, 30, 0.88); /* tom escuro e bastante opaco */
+  border: 1px solid rgba(0,255,153,0.18);
   border-radius: 14px;
-  padding: 1.5rem;
-  box-shadow: 0 2px 16px #000a;
+  padding: 2rem;
   transition: 0.3s;
+  box-shadow: 0 2px 16px #000a;
 }
 
-.portfolio-grid .card h3 {
-  color: #00ff99;
-  font-size: 1.1rem;
-  margin-bottom: 0.6rem;
+.card p {
+  margin-bottom: 1rem; /* separa o texto da lista */
 }
 
-.portfolio-grid .card p {
-  color: #e0e0e0;
-  font-size: 0.95rem;
-  margin-bottom: 0.5rem;
+.card ul {
+  margin-top: 0; /* garante que não vai colar muito no p */
+  padding-left: 1.2rem; /* recuo opcional dos bullets */
 }
 
-.portfolio-grid .card ul {
-  padding-left: 1rem;
-  margin-top: 0.3rem;
+.card ul li {
+  margin-bottom: 0.5rem; /* espaço entre os itens da lista */
 }
 
-.portfolio-grid .card ul li {
-  margin-bottom: 0.25rem;
-}
-
-.portfolio-grid .card:hover {
-  transform: translateY(-4px);
+.card:hover {
+  transform: translateY(-6px);
   border-color: #00ff99;
+}
+
+.card h3 {
+  color: #00ff99;
+  margin-bottom: 1rem;
+}
+
+.card p {
+  font-size: 0.95rem;
+  color: #e0e0e0;
 }
 
 
@@ -271,7 +266,7 @@ form {
 form input,
 form textarea {
   width: 100%;
-  background: rgba(255,255,255,0.05);
+  background: rgba(15, 25, 30, 0.7);
   border: 1px solid rgba(0,255,153,0.2);
   border-radius: 8px;
   padding: 0.8rem 1rem;
@@ -325,6 +320,7 @@ footer {
     height: 150px;
   }
 }
+
 
 
 
