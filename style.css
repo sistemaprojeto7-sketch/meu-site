@@ -90,49 +90,73 @@ header nav a:hover {
 }
 
 
-/* ===========================
-   HERO (SOBRE)
-=========================== */
+/* HERO */
 .hero {
   display: flex;
-  justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 4rem;
-  padding-top: 9rem;
-  padding-bottom: 6rem;
+  justify-content: center;
+  gap: 40px;
+  padding: 100px 5% 60px;
+  text-align: left;
 }
 
+/* Coluna da esquerda (foto + nome/título) */
 .hero-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
+  gap: 8px;
 }
 
 .hero-left .foto {
-  width: 200px;
-  height: 200px;
-  border-radius: 100%;
-  border: 3px solid #00ff99;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
   object-fit: cover;
+  border: 3px solid #00ffcc;
+  box-shadow: 0 0 20px rgba(0, 255, 204, 0.3);
 }
 
 .hero-left .nome {
-  font-size: 1.8rem;
-  margin-top: 1rem;
+  font-size: 1.4rem;
+  font-weight: 700;
 }
 
 .hero-left .cargo {
   font-size: 1rem;
-  color: #9eeec3;
+  font-weight: 400;
+  color: #ccc; /* cor mais suave para o cargo */
 }
 
+/* Conteúdo da direita (já existia) */
 .hero-content {
   max-width: 600px;
-  background: rgba(15,25,30,0.07); 
-  border: 1px solid rgba(0,255,153,0.2); 
-  padding: 2rem;
-  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* CARD estilo */
+.card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(6px);
+}
+
+.hero-content h1 {
+  color: #00ffcc;
+  margin-bottom: 10px;
+}
+
+
+.hero-content p {
+  margin-bottom: 10px;
   line-height: 1.6;
 }
+
 
 #sobre-mim {
   display: flex;
@@ -325,6 +349,7 @@ footer {
     height: 150px;
   }
 }
+
 
 
 
