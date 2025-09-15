@@ -63,9 +63,10 @@ header {
   top: 0; left: 0;
   width: 100%;
   /*background: rgba(0,0,0,0.75); */
-  background: rgba(15,25,30,0.07); 
+  background: rgba(15, 25, 30, 0.9);
+  border: 1px solid rgba(0,255,153,0.18);
   box-shadow: 0 4px 20px #00ff9933;
-  backdrop-filter: blur(6px);
+  padding: 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -181,7 +182,7 @@ header nav a:hover {
 #portfolio {
   padding: 6rem 2rem;
   text-align: center;
-  background: #0f191e; /* fundo escuro */
+  /*background: #0f191e;*? /* fundo escuro */
 }
 
 #portfolio h2 {
@@ -349,6 +350,7 @@ footer {
     height: 150px;
   }
 }
+
 
 
 
