@@ -62,7 +62,8 @@ header {
   position: fixed;
   top: 0; left: 0;
   width: 100%;
-  background: rgba(0,0,0,0.75);
+  /*background: rgba(0,0,0,0.75); */
+  background: rgba(15,25,30,0.07); 
   backdrop-filter: blur(6px);
   display: flex;
   justify-content: space-between;
@@ -142,7 +143,7 @@ header nav a:hover {
   max-width: 700px;  /* limita a largura */
   width: 100%;       /* responsivo */
   text-align: left;
-  border: 1px solid #00ff99;
+  /*border: 1px solid #00ff99; */
   background: rgba(15, 25, 30, 0.9);
   box-shadow: 0 4px 20px #00ff9933;
   padding: 2rem;
@@ -171,7 +172,7 @@ header nav a:hover {
 .card {
   background: rgba(15, 25, 30, 0.88); /* tom escuro e bastante opaco */
   border: 1px solid rgba(0,255,153,0.18);
-  border-radius: 14px;
+  /*border-radius: 14px; */
   padding: 2rem;
   transition: 0.3s;
   box-shadow: 0 2px 16px #000a;
@@ -320,6 +321,7 @@ footer {
     height: 150px;
   }
 }
+
 
 
 
