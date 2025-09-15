@@ -181,6 +181,7 @@ header nav a:hover {
 =========================== */
 #portfolio {
   padding: 6rem 2rem;
+  background: rgba(0,0,0,0.6);
   text-align: center;
   /*background: #0f191e;*? /* fundo escuro */
 }
@@ -335,21 +336,19 @@ footer {
 /* ===========================
    RESPONSIVO
 =========================== */
+/* Media Query para telas menores que 768px */
 @media (max-width: 768px) {
-  header {
-    padding: 1rem 1.5rem;
-  }
-
   .hero {
-    padding-top: 7rem;
-    gap: 2rem;
+    flex-direction: column;
+    text-align: center;
+    padding: 60px 5% 40px;
   }
 
-  .hero-left .foto {
-    width: 150px;
-    height: 150px;
+  .hero-content {
+    max-width: 100%;
   }
 }
+
 
 
 
