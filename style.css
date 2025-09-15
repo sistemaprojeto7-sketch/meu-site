@@ -164,8 +164,8 @@ header nav a:hover {
 
 .portfolio-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1rem;                /* menor espaço entre os cards */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.5rem;                /* menor espaço entre os cards */
   justify-content: center;   /* centraliza toda a grid */
   padding: 0 1rem;
 }
@@ -322,6 +322,7 @@ footer {
     height: 150px;
   }
 }
+
 
 
 
