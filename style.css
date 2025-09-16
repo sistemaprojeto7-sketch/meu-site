@@ -182,8 +182,11 @@ header nav a:hover {
   /*border: 1px solid #00ff99; */
   background: rgba(15, 25, 30, 0.9);
   border: 1px solid rgba(0,255,153,0.18);
-  box-shadow: 0 4px 20px #00ff9933;
+  box-shadow: 0 2px 10px #00ff9922;  /* sombra mais suave */
+  border-radius: 10px;
   padding: 2rem;
+  /*box-shadow: 0 4px 20px #00ff9933;
+  padding: 2rem;*/
 }
 
 /* ===========================
@@ -358,6 +361,7 @@ footer {
     max-width: 100%;
   }
 }
+
 
 
 
