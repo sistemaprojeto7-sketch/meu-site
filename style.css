@@ -131,6 +131,15 @@ header nav a:hover {
   color: #ccc; /* cor mais suave para o cargo */
 }
 
+.hero .tagline {
+  margin-top: 0.8rem;
+  font-size: 1.1rem;
+  font-weight: 300;
+  color: #cccccc;
+  max-width: 500px;   /* para manter o texto em blocos menores */
+  line-height: 1.5;
+}
+
 /* Conteúdo da direita (já existia) */
 .hero-content {
   max-width: 600px;
@@ -349,6 +358,7 @@ footer {
     max-width: 100%;
   }
 }
+
 
 
 
