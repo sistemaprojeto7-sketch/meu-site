@@ -62,10 +62,11 @@ header {
   position: fixed;
   top: 0; left: 0;
   width: 100%;
-  /*background: rgba(0,0,0,0.75); */
   background: rgba(15, 25, 30, 0.9);
   border: 1px solid rgba(0,255,153,0.18);
   box-shadow: 0 4px 20px #00ff9933;
+  border-radius: 10px;           /* NOVO */
+  backdrop-filter: blur(6px);    /* opcional, dá um efeito moderno */
   padding: 2rem;
   display: flex;
   justify-content: space-between;
@@ -348,6 +349,7 @@ footer {
     max-width: 100%;
   }
 }
+
 
 
 
