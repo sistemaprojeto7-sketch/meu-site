@@ -78,7 +78,8 @@ header {
 header .logo {
   font-size: 1.4rem;
   font-weight: 700;
-  color: #00ff99;
+  color: #00ff99 !important; /* força prioridade */
+  text-decoration: none;     /* remove sublinhado se for <a> */
 }
 
 header nav a {
@@ -188,7 +189,7 @@ header nav a:hover {
 
 /* Título */
 .sobre-mim-card h2 {
-  font-size: 2.2rem;      /* igual aos demais títulos */
+  font-size: 1.4rem;      /* igual aos demais títulos */
   color: #00ff99;          /* mesma cor dos outros títulos */
   margin-bottom: 3rem;     /* mesmo espaçamento */
   text-align: center;      /* se quiser centralizado */
@@ -368,6 +369,7 @@ footer {
     max-width: 100%;
   }
 }
+
 
 
 
