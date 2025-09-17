@@ -190,6 +190,7 @@ header nav a:hover {
 .sobre-mim-card h2 {
   color: #00ff99;
   margin-bottom: 20px;
+  text-align: center;
 }
 
 
@@ -366,6 +367,7 @@ footer {
     max-width: 100%;
   }
 }
+
 
 
 
