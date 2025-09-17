@@ -189,7 +189,7 @@ header nav a:hover {
 
 /* Título */
 .sobre-mim-card h2 {
-  font-size: 1.4rem;      /* igual aos demais títulos */
+  font-size: 2.2rem;      /* igual aos demais títulos */
   color: #00ff99;          /* mesma cor dos outros títulos */
   margin-bottom: 3rem;     /* mesmo espaçamento */
   text-align: center;      /* se quiser centralizado */
@@ -369,6 +369,7 @@ footer {
     max-width: 100%;
   }
 }
+
 
 
 
