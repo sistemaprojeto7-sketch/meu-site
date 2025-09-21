@@ -320,7 +320,7 @@ form {
 
 form input,
 form textarea {
-  background: rgba(15, 25, 30, 0.88); /* tom escuro e bastante opaco */
+  /*background: rgba(15, 25, 30, 0.7); /* mesmo tom do depoimento */
   border: 1px solid rgba(0,255,153,0.18);
   border-radius: 14px;
   padding: 2rem;
@@ -378,6 +378,7 @@ footer {
     max-width: 100%;
   }
 }
+
 
 
 
