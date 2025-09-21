@@ -7,6 +7,59 @@
   <meta name="description" content="Consultoria em automação, integração WMS/SAP/TOTVS/Protheus e soluções com IA para logística, indústria e varejo.">
   <link rel="stylesheet" href="style.css">
 
+    <!-- CSS extra para seção de Projetos -->
+  <style>
+    /* ===========================
+       Projetos & Automações
+    =========================== */
+    #projects {
+      padding: 80px 40px;
+    }
+    #projects h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: gold;
+      text-align: center;
+    }
+    #projects p {
+      max-width: 800px;
+      margin: 0 auto 30px;
+      text-align: center;
+    }
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 40px;
+    }
+    .project-card {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 20px;
+      border-radius: 10px;
+      border: 1px solid #00ff99;
+      transition: transform 0.2s;
+    }
+    .project-card:hover {
+      transform: translateY(-5px);
+    }
+
+    /* Responsivo opcional */
+    @media (max-width: 768px) {
+      .projects {
+        grid-template-columns: 1fr;
+        gap: 15px;
+      }
+    }
+  </style>
+
+  <!-- SEO / Open Graph -->
+  <meta property="og:title" content="InovaFlow — Automação de Processos">
+  <meta property="og:description" content="Consultoria em automação, integração WMS/SAP/TOTVS/Protheus e soluções com IA para logística, indústria e varejo.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://famous-quokka-5d97e0.netlify.app/">
+  <meta property="og:image" content="https://famous-quokka-5d97e0.netlify.app/sua-foto.jpg">
+</head>
+
   <!-- SEO / Open Graph -->
   <meta property="og:title" content="InovaFlow — Automação de Processos">
   <meta property="og:description" content="Consultoria em automação, integração WMS/SAP/TOTVS/Protheus e soluções com IA para logística, indústria e varejo.">
@@ -149,7 +202,7 @@
     </div>
   </section>
 
-    <!-- PROJETOS -->
+  <!-- PROJETOS -->
   <section id="projects">
       <h2>Projetos & Automações</h2>
       <p>Confira algumas das principais automações que desenvolvo, aplicáveis em logística, indústria e negócios de qualquer porte:</p>
@@ -172,8 +225,8 @@
   <!-- CONTACT -->
   <section id="contact" class="card" style="margin-top:20px">
     <div style="display:flex;flex-direction:column;gap:12px">
-      <div style="font-size:15px;color:var(--muted)">CONTATO</div>
-      <h2 style="margin:0">Você está pronto para dar o próximo passo?</h2>
+      <div style="font-size:20px;color:var(--muted)">CONTATO</div>
+      <h2 style="margin:0">Vamos transformar suas ideias em automações reais?</h2>
       <p style="color:var(--muted);margin:0">Entre em contato agora!</p>
 
       <div class="contact-row" style="margin-top:12px">
@@ -223,6 +276,7 @@
   </script>
 </body>
 </html>
+
 
 
 
