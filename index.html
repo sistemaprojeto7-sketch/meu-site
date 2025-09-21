@@ -13,17 +13,19 @@
        Projetos & Automações
     =========================== */
     #projects {
+      position: relative;           /* necessário para o overlay */
       padding: 80px 40px;
+      z-index: 1;                   /* mantém acima do canvas */
     }
-    <style>
-  #projects h2 {
-        color: #00ff99 !important;
-        text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7) !important;
-        font-size: 2rem;
-        margin-bottom: 20px;
-        text-align: center;
-      }
-    </style>
+    
+    #projects::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.6); /* capa escura */
+      z-index: -1;                   /* atrás do conteúdo */
+      border-radius: 10px;           /* opcional, se quiser cantos arredondados */
+    }
     }
     #projects p {
       max-width: 800px;
@@ -280,6 +282,7 @@
   </script>
 </body>
 </html>
+
 
 
 
