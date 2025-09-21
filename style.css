@@ -2,7 +2,8 @@
 
 html, body {
   font-family: 'Inter', system-ui, sans-serif;
-  background: #000;
+  background: rgba(0,0,0,0.6);
+  /*background: #000; */
   color: #f0f0f0;
   scroll-behavior: smooth;
 }
@@ -371,6 +372,7 @@ footer {
     max-width: 100%;
   }
 }
+
 
 
 
