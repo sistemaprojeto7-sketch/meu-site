@@ -301,7 +301,7 @@ header nav a:hover {
 =========================== */
 #contact {
   padding: 6rem 2rem;
-  background: rgba(0,0,0,0.6);
+  /*background: rgba(0,0,0,0.6); */
   text-align: center;
 }
 
@@ -371,6 +371,7 @@ footer {
     max-width: 100%;
   }
 }
+
 
 
 
