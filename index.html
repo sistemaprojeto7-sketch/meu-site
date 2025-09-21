@@ -7,25 +7,22 @@
   <meta name="description" content="Consultoria em automação, integração WMS/SAP/TOTVS/Protheus e soluções com IA para logística, indústria e varejo.">
   <link rel="stylesheet" href="style.css">
 
-    <!-- CSS extra para seção de Projetos -->
+<!-- CSS extra para seção de Projetos -->
   <style>
     /* ===========================
        Projetos & Automações
     =========================== */
     #projects {
-      position: relative;           /* necessário para o overlay */
       padding: 80px 40px;
-      z-index: 1;                   /* mantém acima do canvas */
-    }
-    
-    #projects::before {
-      content: "";
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
       background: rgba(0, 0, 0, 0.6); /* capa escura */
       z-index: -1;                   /* atrás do conteúdo */
       border-radius: 10px;           /* opcional, se quiser cantos arredondados */
     }
+    #projects h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #00ff99 !important; /* força a cor */
+      text-align: center;
     }
     #projects p {
       max-width: 800px;
