@@ -128,22 +128,31 @@
             </div>
         </section>
 
-        <section id="contact" class="container section-padding">
-            <div class="card glass-card contact-wrapper">
-                <div class="contact-header">
-                    <h2>Vamos transformar suas ideias?</h2>
-                    <p>Entre em contato e comece a automatizar.</p>
+    <section id="contact" class="container section-padding">
+        <div class="card contact-glow-card">
+            <div class="contact-inner-grid">
+                <div class="contact-text">
+                    <h2 class="section-title-alt">Vamos Automatizar?</h2>
+                    <p>Receba um diagnóstico de onde sua operação está perdendo dinheiro.</p>
+                    
+                    <div id="msg-sucesso" style="display:none; background: var(--primary); color: #000; padding: 20px; border-radius: 10px; margin-top: 20px; font-weight: 800; text-align: center;">
+                        ✅ Mensagem enviada com sucesso! Voltando ao topo...
+                    </div>
                 </div>
-                <form name="contato" method="POST" data-netlify="true" class="main-form">
-                    <input type="text" name="nome" placeholder="Nome" required>
-                    <input type="email" name="email" placeholder="E-mail" required>
-                    <textarea name="mensagem" placeholder="Mensagem" required></textarea>
-                    <button type="submit">Enviar Proposta</button>
+    
+                <form id="form-contato" name="contato" method="POST" data-netlify="true" class="main-form">
+                    <input type="hidden" name="form-name" value="contato">
+                    
+                    <input type="text" name="nome" placeholder="Seu Nome" required>
+                    <input type="email" name="email" placeholder="Seu E-mail" required>
+                    <textarea name="mensagem" placeholder="Como posso te ajudar?" required></textarea>
+                    <button type="submit" class="btn-send-glow">Enviar Diagnóstico</button>
                 </form>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
     <footer>© 2026 InovaFlow — Eduardo Florim | Todos os direitos reservados.</footer>
 </body>
 </html>
+
