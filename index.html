@@ -3,50 +3,42 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>InovaFlow — Eduardo Florim | IA & Automação</title>
-    <meta name="description" content="Especialista em automação de processos, integração WMS/ERP e sistemas agênticos com IA.">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-    
+    <title>InovaFlow — Eduardo Florim</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
-
     <div class="aurora-bg"></div>
 
     <header class="nav-header">
         <div class="container nav-content">
-            <div class="logo">INOVA<span>FLOW</span></div>
-            <nav>
-                <a href="#topo">Início</a>
-                <a href="#portfolio">Cases</a>
-                <a href="#projects">Serviços</a>
-                <a href="#contact" class="btn-contact-nav">Contato</a>
+            <div class="logo">
+                <img src="logo.png" alt="InovaFlow Logo">
+            </div>
+            <nav class="nav-links">
+                <a href="#topo">Sobre</a>
+                <a href="#portfolio">Portfólio</a>
+                <a href="#depoimentos">Depoimentos</a>
+                <a href="#contact" class="btn-nav">Contato</a>
             </nav>
         </div>
     </header>
 
     <main>
-        <section id="topo" class="hero">
+        <section id="topo" class="hero section-padding">
             <div class="container hero-grid">
                 <div class="hero-left">
-                    <div class="foto-wrapper">
-                        <img src="minhafoto.jpg" alt="Eduardo Florim" class="foto">
-                    </div>
+                    <img src="minhafoto.jpg" alt="Eduardo Florim" class="foto">
                     <h2 class="nome">Eduardo Florim</h2>
-                    <p class="cargo">Arquiteto de Sistemas Agênticos</p>
-                    <div class="hero-social-links">
-                        <a href="https://www.linkedin.com/in/eduardo-florim-b7915930" target="_blank" class="btn-social ln">LinkedIn</a>
-                        <a href="mailto:inovaflow0@gmail.com" class="btn-social mail">E-mail</a>
-                    </div>
+                    <p class="cargo">Especialista em Processos | Consultor em IA</p>
+                    <a href="https://www.linkedin.com/in/eduardo-florim-b7915930" target="_blank" class="btn-ln-hero">🔗 Conectar no LinkedIn</a>
                 </div>
 
-                <div class="hero-right card">
+                <div class="hero-right card glass-card">
                     <span class="tag">ESTRATEGISTA DE AUTOMAÇÃO</span>
                     <h1>Soluções que impulsionam o seu <span class="highlight">Negócio.</span></h1>
                     <p>Especialista em automação logística e sistemas autônomos. Construo ativos digitais que integram cérebro (LLMs), memória (dados) e ação (ERP/WMS).</p>
+                    
                     <div class="hero-stats">
                         <div class="stat-item"><strong>+85%</strong><span>Eficiência</span></div>
                         <div class="stat-item"><strong>ROI</strong><span>Rápido</span></div>
@@ -56,136 +48,72 @@
             </div>
         </section>
 
-        <section id="sobre-mim" class="container">
+        <section class="container">
             <div class="card glass-card">
-                <h2 class="section-title-left">Sobre Mim</h2>
-                <div class="sobre-grid">
-                    <div class="sobre-text">
-                        <p>Sou especialista em automação de processos logísticos e atuo na construção de sistemas agênticos aplicados à operação empresarial. Desenvolvo soluções em Python que integram inteligência artificial, dados operacionais e execução direta nos sistemas corporativos (SAP, TOTVS, Protheus, Sythex).</p>
-                        <p>Minha atuação combina automação avançada e arquitetura de dados para transformar processos em ativos digitais escaláveis.</p>
-                    </div>
-                    <div class="sobre-skills">
-                        <div class="skill-group">
-                            <strong>HARD SKILLS:</strong>
-                            <p>Python, APIs REST, LLMs, Web Scraping, SQL, Integrações ERP/WMS.</p>
-                        </div>
-                        <div class="skill-group">
-                            <strong>VALORES:</strong>
-                            <p>Segurança de Dados, Governança, Escalabilidade e ROI direto.</p>
-                        </div>
-                    </div>
+                <h2 class="section-title-alt">Sobre Mim</h2>
+                <p>Sou especialista em automação de processos logísticos e atuo na construção de sistemas agênticos aplicados à operação empresarial. Desenvolvo soluções em Python que integram inteligência artificial, dados operacionais e execução direta nos sistemas corporativos (SAP, TOTVS, Protheus, Sythex).</p>
+                <p style="margin-top:15px">Minha atuação combina automação avançada e arquitetura de dados para transformar processos em ativos digitais escaláveis.</p>
+                
+                <div class="skills-wrapper">
+                    <p><strong>🛠️ HARD SKILLS:</strong> Python, APIs REST, LLMs, Web Scraping, SQL, Integrações ERP/WMS.</p>
+                    <p><strong>💡 VALORES:</strong> Segurança de Dados, Governança, Escalabilidade e ROI direto.</p>
                 </div>
             </div>
         </section>
 
         <section id="portfolio" class="container section-padding">
-            <h2 class="section-title">Cases de <span class="highlight">Sucesso</span></h2>
+            <h2 class="section-title">Portfólio</h2>
             <div class="portfolio-grid">
-                <div class="card case-card">
-                    <div class="case-icon">🚀</div>
-                    <h3>Integração WMS ↔ SAP</h3>
-                    <p>Automação total da comunicação entre estoque e gestão fiscal, eliminando processos manuais.</p>
-                    <ul class="case-list">
-                        <li>Redução de 85% no tempo de lançamento</li>
-                        <li>0% de erros de digitação</li>
-                    </ul>
-                </div>
-                <div class="card case-card">
-                    <div class="case-icon">🤖</div>
-                    <h3>IA Operacional</h3>
-                    <p>Agentes preditivos para prever rupturas e gargalos em centros de distribuição com alta precisão.</p>
-                    <ul class="case-list">
-                        <li>92% de acurácia na previsão</li>
-                        <li>Alertas automáticos via Teams/WhatsApp</li>
-                    </ul>
-                </div>
-                <div class="card case-card">
-                    <div class="case-icon">📊</div>
-                    <h3>Oráculo de Dados</h3>
-                    <p>Interface de IA que responde perguntas complexas sobre a operação consultando bancos em tempo real.</p>
-                    <ul class="case-list">
-                        <li>Decisões 3x mais rápidas</li>
-                        <li>Visibilidade 360º da operação</li>
-                    </ul>
-                </div>
-                <div class="card case-card">
-                    <div class="case-icon">💰</div>
-                    <h3>Otimização Fiscal</h3>
-                    <p>Agentes que leem NFs e alimentam ERPs automaticamente com validação tributária.</p>
-                    <ul class="case-list">
-                        <li>Economia de 6h/dia do time fiscal</li>
-                        <li>Conformidade total (Compliance)</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <section id="projects" class="container section-padding">
-            <h2 class="section-title">Especialidades <span class="highlight">Tech</span></h2>
-            <div class="pills-grid">
-                <span class="pill">Automação WMS/ERP</span>
-                <span class="pill">IA Agêntica</span>
-                <span class="pill">RPA de Alta Performance</span>
-                <span class="pill">Integração de APIs</span>
-                <span class="pill">Scripts Python Personalizados</span>
-                <span class="pill">Dashboard Power BI</span>
-                <span class="pill">Web Scraping Avançado</span>
-                <span class="pill">Google Workspace Automation</span>
-                <span class="pill">Controle de Estoque Real-time</span>
-                <span class="pill">Auditoria Automatizada</span>
+                <div class="card"><h3>Integração WMS ↔ SAP</h3><p>Automação da comunicação entre sistemas de gestão e estoque.</p><ul><li>🚀 Redução de 85% no tempo</li><li>📉 0% de erros</li><li>💰 ROI em 2 meses</li></ul></div>
+                <div class="card"><h3>Automação Fiscal</h3><p>Agentes que leem NFs e alimentam ERPs automaticamente.</p><ul><li>⏳ Economia de 6h/dia</li><li>📑 Validação total</li><li>📌 Sem multas</li></ul></div>
+                <div class="card"><h3>Dashboards Real-Time</h3><p>Monitoramento de KPIs logísticos integrados.</p><ul><li>📊 Visibilidade total</li><li>⚡ Reação 3x mais rápida</li><li>📈 Dados confiáveis</li></ul></div>
+                <div class="card"><h3>IA Operacional</h3><p>Previsão de rupturas e gargalos em CDs.</p><ul><li>🤖 92% de acurácia</li><li>📦 -30% em atrasos</li><li>💡 Alertas automáticos</li></ul></div>
+                <div class="card"><h3>IA em Planilhas</h3><p>Agentes autônomos que monitoram e atualizam ERPs.</p><ul><li>📥 Entrada real-time</li><li>📌 Alertas inteligentes</li><li>⏳ Fim do manual</li></ul></div>
+                <div class="card"><h3>Revisão Contábil</h3><p>Agentes que analisam termos e geram relatórios.</p><ul><li>📑 Conferência automática</li><li>⚖️ Cálculos precisos</li><li>⏳ -70% de tempo</li></ul></div>
+                <div class="card"><h3>App de Acompanhamento</h3><p>Desenvolvimento de apps inteligentes para metas.</p><ul><li>📱 Notificações Push</li><li>🔍 Monitoramento contínuo</li><li>🚀 Substitui supervisão</li></ul></div>
+                <div class="card"><h3>Atendimento ao Cliente</h3><p>Chatbots que rastreiam pedidos 24/7.</p><ul><li>💬 Respostas imediatas</li><li>⏳ -80% tempo suporte</li><li>📈 Fidelização</li></ul></div>
+                <div class="card"><h3>Automação de RH</h3><p>Triagem de currículos e relatórios de produtividade.</p><ul><li>👥 Seleção automática</li><li>📊 ROI em tempo real</li><li>⏳ -60% tempo contratação</li></ul></div>
+                <div class="card"><h3>Controle de Estoques</h3><p>Monitoramento e alertas de compra autônomos.</p><ul><li>📦 Prevenção de rupturas</li><li>💰 Compras assertivas</li><li>⚡ Reposição automática</li></ul></div>
+                <div class="card"><h3>Análise Financeira</h3><p>Consolidação de bancos e ERPs para estratégia.</p><ul><li>📑 Conciliação automática</li><li>📉 Identificação de gastos</li><li>🚀 Relatórios em minutos</li></ul></div>
+                <div class="card"><h3>Otimização de Custos</h3><p>Análise de contratos para sugerir economias.</p><ul><li>💰 -20% custos operais</li><li>📊 Gastos identificados</li><li>⚖️ Simulação de cenários</li></ul></div>
             </div>
         </section>
 
         <section id="depoimentos" class="container section-padding">
-            <h2 class="section-title">Feedback de <span class="highlight">Líderes</span></h2>
-            <div class="depoimentos-slider">
-                <div class="depoimento-card">
-                    <p>"O Eduardo transformou nossa rotina. O Oráculo de IA nos entrega respostas imediatas que iam muito além dos KPIs tradicionais."</p>
-                    <strong>— Diretor de Multinacional</strong>
-                </div>
-                <div class="depoimento-card">
-                    <p>"Conseguimos reduzir de 3 horas para minutos o processamento diário de NFs no nosso CD com os robôs implementados."</p>
-                    <strong>— Gestor de Operações</strong>
-                </div>
+            <h2 class="section-title">Resultados que transformam</h2>
+            <div class="depoimentos-grid">
+                <div class="card"><p>“Reduzimos de 3h para minutos o processamento de NFs.”</p><h4>— Gestor de Operações</h4></div>
+                <div class="card"><p>“Dashboard nos deu visibilidade real dos pedidos.”</p><h4>— Gerente Supply Chain</h4></div>
+                <div class="card"><p>“Integração SAP ↔ WMS trouxe confiabilidade.”</p><h4>— Coordenador Logística</h4></div>
+                <div class="card"><p>“O Oráculo de IA vai muito além dos KPIs.”</p><h4>— Diretor Multinacional</h4></div>
+                <div class="card"><p>“Relatórios consolidados em minutos.”</p><h4>— Gerente Financeiro</h4></div>
+                <div class="card"><p>“Chatbot liberou nossa equipe para tarefas nobres.”</p><h4>— Gerente de RH</h4></div>
+                <div class="card"><p>“Ganhamos 70% de tempo em inventário.”</p><h4>— Supervisor Estoque</h4></div>
+                <div class="card"><p>“Segurança e confiança para a diretoria.”</p><h4>— Diretor Compliance</h4></div>
+                <div class="card"><p>“Insights acionáveis diariamente.”</p><h4>— CEO Tech</h4></div>
+                <div class="card"><p>“Aceleramos em 50% a conferência.”</p><h4>— Coordenador Armazém</h4></div>
+                <div class="card"><p>“Relatórios em tempo recorde.”</p><h4>— Gerente Comercial</h4></div>
+                <div class="card"><p>“Fluidez total entre ERP e CRM.”</p><h4>— Diretor Marketing</h4></div>
             </div>
         </section>
 
         <section id="contact" class="container section-padding">
-            <div class="contact-grid card glass-card">
-                <div class="contact-info">
-                    <h2>Vamos automatizar sua <span class="highlight">Operação?</span></h2>
-                    <p>Transforme processos manuais em ativos digitais lucrativos.</p>
-                    <div class="contact-methods">
-                        <span>✉️ inovaflow0@gmail.com</span>
-                        <span>🔗 @eduardo-florim</span>
-                    </div>
-                </div>
+            <div class="card glass-card">
+                <h2>Vamos transformar suas ideias em automações reais?</h2>
                 <form name="contato" method="POST" data-netlify="true" class="main-form">
-                    <input type="text" name="nome" placeholder="Seu Nome" required>
-                    <input type="email" name="email" placeholder="Seu E-mail" required>
-                    <textarea name="mensagem" placeholder="Como posso ajudar seu negócio?" required></textarea>
-                    <button type="submit" class="btn-submit">Enviar Proposta</button>
+                    <input type="text" name="nome" placeholder="Nome" required>
+                    <input type="email" name="email" placeholder="E-mail" required>
+                    <textarea name="mensagem" placeholder="Sua Mensagem" required></textarea>
+                    <button type="submit">Enviar Mensagem</button>
                 </form>
+                <div class="contact-links-footer">
+                    <a href="mailto:inovaflow0@gmail.com">✉️ inovaflow0@gmail.com</a>
+                    <a href="https://www.linkedin.com/in/eduardo-florim-b7915930">🔗 LinkedIn</a>
+                </div>
             </div>
         </section>
     </main>
 
-    <footer>
-        <div class="container footer-content">
-            <p>© 2026 InovaFlow — Tecnologia Agêntica para Logística e Indústria.</p>
-        </div>
-    </footer>
-
-    <script>
-        // Smooth scroll simples
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
+    <footer>© 2026 InovaFlow — Eduardo Florim</footer>
 </body>
 </html>
