@@ -52,7 +52,7 @@ body {
 }
 
 .logo img { 
-    height: 75px; /* Aumentado de 45px para 65px */
+    height: 85px; /* Aumentado de 45px para 65px */
     width: auto; 
     transition: 0.3s; 
     display: block;
@@ -96,8 +96,8 @@ body {
 }
 
 .foto-wrapper {
-    width: 290px;       /* Tamanho ideal: nem grande, nem pequena */
-    height: 290px;      /* Mantém a proporção 1:1 */
+    width: 310px;       /* Tamanho ideal: nem grande, nem pequena */
+    height: 310px;      /* Mantém a proporção 1:1 */
     border-radius: 20px; /* Quadrada com cantos suavemente arredondados */
     overflow: hidden;
     margin: 0 auto 20px;
@@ -332,6 +332,7 @@ footer { text-align: center; padding: 40px; opacity: 0.6; font-size: 0.8rem; bor
         margin-bottom: 30px;
     }
 }
+
 
 
 
