@@ -1,3 +1,39 @@
+<script>
+    const meuForm = document.getElementById('form-contato');
+    const msgSucesso = document.getElementById('msg-sucesso');
+
+    meuForm.addEventListener("submit", function(e) {
+        e.preventDefault(); // Impede o erro de carregar página inexistente
+
+        const formData = new FormData(meuForm);
+
+        // Envia os dados para o Netlify em background
+        fetch("/", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: new URLSearchParams(formData).toString(),
+        })
+        .then(() => {
+            // 1. Esconde o formulário e mostra a mensagem de sucesso
+            meuForm.style.display = 'none';
+            msgSucesso.style.display = 'block';
+
+            // 2. Aguarda 2 segundos para a pessoa ler e pula para o topo
+            setTimeout(() => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            }, 2000);
+            
+            // 3. Opcional: Recarrega a página após 4 segundos para limpar tudo
+            setTimeout(() => { location.reload(); }, 4000);
+        })
+        .catch((error) => alert("Erro ao enviar: " + error));
+    });
+</script>
+
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -155,4 +191,5 @@
     <footer>© 2026 InovaFlow — Eduardo Florim | Todos os direitos reservados.</footer>
 </body>
 </html>
+
 
