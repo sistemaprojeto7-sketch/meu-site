@@ -262,4 +262,22 @@ body {
     .hero-right h1 { font-size: 2rem; }
 }
 
+/* ============================================================
+   7. RESPONSIVIDADE TOTAL (O SEGREDO DO CELULAR)
+   ============================================================ */
+@media (max-width: 800px) {
+    /* ... (suas outras regras de nav e hero permanecem aqui) ... */
+
+    /* FORÇA OS PROJETOS A FICAREM UM EMBAIXO DO OUTRO NO CELULAR */
+    .projects-grid {
+        grid-template-columns: 1fr; /* 1 coluna apenas */
+        gap: 10px;
+    }
+
+    .project-card {
+        width: 100%; /* Garante que preencha toda a largura */
+    }
+}
+
 footer { text-align: center; padding: 40px; opacity: 0.6; font-size: 0.8rem; border-top: 1px solid var(--border); }
+
