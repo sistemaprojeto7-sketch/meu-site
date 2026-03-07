@@ -1,129 +1,22 @@
-:root {
-    --primary: #00ff99;
-    --accent: #6c4cff;
-    --dark-bg: #0a0a12;
-    --glass: rgba(20, 30, 40, 0.8);
-    --border-light: rgba(0, 255, 153, 0.3);
-}
-
-* { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body { background: var(--dark-bg); color: #fff; font-family: 'Inter', sans-serif; }
-
-.aurora-bg {
-    position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;
-    background: radial-gradient(circle at 10% 20%, rgba(108, 76, 255, 0.1), transparent 40%),
-                radial-gradient(circle at 90% 80%, rgba(0, 255, 153, 0.1), transparent 40%);
-}
-
-.container { width: 92%; max-width: 1200px; margin: auto; }
-.section-padding { padding: 80px 0; }
-.card { background: var(--glass); border: 1px solid var(--border-light); border-radius: 20px; padding: 30px; backdrop-filter: blur(10px); }
-
-/* ===========================
-   HEADER RESPONSIVO (CORRIGIDO)
-   =========================== */
-.nav-header {
-    position: fixed; width: 100%; top: 0;
-    background: rgba(10, 10, 18, 0.95);
-    border-bottom: 1px solid var(--border-light);
-    z-index: 1000; padding: 12px 0;
-}
-.nav-content { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
-.logo img { height: 45px; width: auto; }
-
-.nav-links { display: flex; align-items: center; gap: 15px; }
-.nav-links a { text-decoration: none; color: #fff; font-size: 0.85rem; font-weight: 600; transition: 0.3s; }
-.nav-links a:hover { color: var(--primary); }
-
-.btn-nav-highlight {
-    background: var(--primary);
-    color: #000 !important;
-    padding: 8px 16px;
-    border-radius: 50px;
-    box-shadow: 0 0 15px rgba(0, 255, 153, 0.3);
-}
-
-/* ===========================
-   SOBRE MIM MELHORADO
-   =========================== */
-.about-card-featured { border-left: 5px solid var(--primary); }
-.about-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 40px; }
-.about-p { font-size: 1.05rem; margin-bottom: 20px; color: rgba(255, 255, 255, 0.9); }
-.skill-pill { 
-    background: rgba(255, 255, 255, 0.05); padding: 15px; border-radius: 12px; 
-    margin-bottom: 10px; border: 1px solid rgba(255,255,255,0.1); font-size: 0.9rem;
-}
-
-/* ===========================
-   BOTÕES COM DESTAQUE
-   ========================== */
-.btn-ln-glow {
-    display: inline-block; padding: 12px 25px; border: 2px solid var(--primary);
-    color: var(--primary); text-decoration: none; font-weight: 800; border-radius: 10px;
-    transition: 0.3s; margin-top: 20px;
-}
-.btn-ln-glow:hover { background: var(--primary); color: #000; box-shadow: 0 0 30px var(--primary); }
-
-.btn-email-pulse {
-    display: inline-block; padding: 20px 40px; background: #fff; color: #000;
-    text-decoration: none; font-weight: 800; border-radius: 50px;
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3); transition: 0.3s;
-}
-.btn-email-pulse:hover { transform: scale(1.05); background: var(--primary); }
-
-/* ===========================
-   CONTATO COM DESTAQUE (MAIS CLARO)
-   =========================== */
-.contact-glow-card {
-    background: rgba(30, 45, 60, 0.9); /* Azul escuro mais claro */
-    border: 2px solid var(--primary);
-    box-shadow: 0 0 40px rgba(0, 255, 153, 0.1);
-}
-.btn-send-glow {
-    background: var(--primary); color: #000; border: none; padding: 20px;
-    border-radius: 12px; font-weight: 800; cursor: pointer; transition: 0.3s;
-}
-
-/* ===========================
-   RESPONSIVIDADE TOTAL
-   =========================== */
-@media (max-width: 768px) {
-    .nav-content { justify-content: center; gap: 10px; }
-    .logo { margin-bottom: 5px; }
-    .nav-links { gap: 10px; }
-    .nav-links a { font-size: 0.75rem; }
-
-    .hero-grid, .about-grid { grid-template-columns: 1fr; text-align: center; }
-    .hero { padding-top: 160px; }
-    .foto-wrapper { margin: auto; }
-    .hero-stats { justify-content: center; }
-    
-    .section-padding { padding: 40px 0; }
-}
-
-
 /* ============================================================
-   CONFIGURAÇÕES BASE & AURORA 2026
+   1. VARIÁVEIS E CONFIGURAÇÕES BASE
    ============================================================ */
 :root {
     --primary: #00ff99;
     --accent: #6c4cff;
-    --dark: #05050a;
+    --dark-bg: #05050a;
     --glass: rgba(15, 25, 30, 0.85);
-    --border: rgba(0, 255, 153, 0.15);
+    --border: rgba(0, 255, 153, 0.2);
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
-
 html { scroll-behavior: smooth; }
-
-body {
-    background-color: var(--dark);
-    color: #fff;
-    font-family: 'Inter', sans-serif;
-    line-height: 1.6;
-    overflow-x: hidden;
+body { 
+    background-color: var(--dark-bg); 
+    color: #fff; 
+    font-family: 'Inter', sans-serif; 
+    line-height: 1.6; 
+    overflow-x: hidden; 
 }
 
 /* Fundo Animado Aurora */
@@ -135,46 +28,70 @@ body {
                 radial-gradient(circle at 85% 80%, rgba(0, 255, 153, 0.1), transparent 40%);
 }
 
-.container { width: 90%; max-width: 1200px; margin: auto; }
+.container { width: 92%; max-width: 1200px; margin: auto; }
 .section-padding { padding: 80px 0; }
 .highlight { color: var(--primary); font-weight: 800; }
 
 /* ============================================================
-   HEADER & LOGO
+   2. HEADER E MENU (CORRIGIDO PARA NÃO SUMIR NO CELULAR)
    ============================================================ */
 .nav-header {
     position: fixed;
     width: 100%;
-    padding: 15px 0;
-    background: rgba(5, 5, 10, 0.9);
+    padding: 12px 0;
+    background: rgba(5, 5, 10, 0.95);
     backdrop-filter: blur(15px);
     z-index: 1000;
     border-bottom: 1px solid var(--border);
 }
 
-.nav-content { display: flex; justify-content: space-between; align-items: center; }
-.logo img { height: 50px; width: auto; transition: 0.3s; }
-.logo img:hover { transform: scale(1.05); }
+.nav-content { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+}
+
+.logo img { height: 45px; width: auto; transition: 0.3s; }
+
+.nav-links { 
+    display: flex; 
+    align-items: center; 
+    gap: 15px; 
+}
 
 .nav-links a { 
-    margin-left: 25px; 
     text-decoration: none; 
     color: #fff; 
-    font-size: 0.9rem; 
+    font-size: 0.85rem; 
     font-weight: 600; 
     transition: 0.3s; 
 }
 
 .nav-links a:hover { color: var(--primary); }
-.btn-nav { background: var(--primary); color: #000 !important; padding: 8px 20px; border-radius: 8px; }
+
+/* Botão de destaque no menu */
+.btn-nav-highlight, .btn-nav { 
+    background: var(--primary); 
+    color: #000 !important; 
+    padding: 8px 16px; 
+    border-radius: 50px; 
+    font-weight: 800;
+    box-shadow: 0 0 15px rgba(0, 255, 153, 0.3);
+}
 
 /* ============================================================
-   HERO & CARDS
+   3. HERO E SOBRE MIM
    ============================================================ */
-.hero-grid { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 40px; align-items: center; }
+.hero-grid { 
+    display: grid; 
+    grid-template-columns: 0.8fr 1.2fr; 
+    gap: 40px; 
+    align-items: center; 
+    padding-top: 120px;
+}
 
 .foto-wrapper {
-    width: 220px; height: 220px;
+    width: 200px; height: 200px;
     border-radius: 50%; overflow: hidden;
     margin: 0 auto 20px;
     border: 3px solid var(--primary);
@@ -186,40 +103,37 @@ body {
 .cargo { color: #ccc; font-weight: 400; margin-bottom: 10px; }
 .tagline { opacity: 0.8; font-size: 1rem; margin-bottom: 20px; }
 
-.btn-ln-modern {
+.btn-ln-modern, .btn-ln-glow {
     display: inline-block;
     padding: 12px 24px;
-    border-radius: 8px;
+    border-radius: 10px;
     background: rgba(15, 25, 30, 0.88);
-    border: 1px solid var(--primary);
+    border: 2px solid var(--primary);
     color: var(--primary);
     font-weight: bold;
     text-decoration: none;
     transition: 0.3s;
 }
 
-.btn-ln-modern:hover {
+.btn-ln-modern:hover, .btn-ln-glow:hover {
     background: var(--primary);
     color: #000;
-    box-shadow: 0 0 20px rgba(0, 255, 153, 0.4);
+    box-shadow: 0 0 30px var(--primary);
 }
 
 .glass-card {
     background: var(--glass);
     border: 1px solid var(--border);
-    padding: 35px;
+    padding: 30px;
     border-radius: 20px;
-    backdrop-filter: blur(10px);
 }
 
-.hero-right h1 { font-size: 3rem; line-height: 1.1; margin-bottom: 20px; }
-
-.hero-stats { display: flex; gap: 25px; margin-top: 30px; }
-.stat-item strong { display: block; font-size: 1.6rem; color: var(--primary); }
-.stat-item span { font-size: 0.8rem; opacity: 0.7; }
+.hero-stats { display: flex; gap: 20px; margin-top: 25px; }
+.stat-item strong { display: block; font-size: 1.4rem; color: var(--primary); }
+.stat-item span { font-size: 0.75rem; opacity: 0.7; }
 
 /* ============================================================
-   ESTILO DE DESTAQUE NO MOUSE (HOVER)
+   4. CARDS (DESTAQUE NO HOVER - MOUSE)
    ============================================================ */
 .card {
     background: var(--glass);
@@ -233,18 +147,8 @@ body {
     transform: translateY(-10px);
     border-color: var(--primary);
     background: rgba(0, 255, 153, 0.05);
-    box-shadow: 0 15px 35px rgba(0, 255, 153, 0.15);
+    box-shadow: 0 15px 35px rgba(0, 255, 153, 0.2);
 }
-
-.card h3 { color: var(--primary); margin-bottom: 15px; }
-.card ul { list-style: none; margin-top: 15px; }
-.card ul li { font-size: 0.85rem; margin-bottom: 5px; }
-
-/* ============================================================
-   GRIDS & PROJETOS
-   ============================================================ */
-.section-title { text-align: center; font-size: 2.5rem; margin-bottom: 40px; font-weight: 800; color: var(--primary); }
-.section-title-alt { font-size: 2rem; margin-bottom: 20px; color: var(--primary); }
 
 .portfolio-grid, .depoimentos-grid {
     display: grid;
@@ -252,16 +156,19 @@ body {
     gap: 20px;
 }
 
+/* ============================================================
+   5. PROJETOS E BOTÕES ESPECIAIS
+   ============================================================ */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 15px;
 }
 
 .project-card {
     border: 1px solid var(--border);
-    padding: 20px;
-    border-radius: 12px;
+    padding: 15px;
+    border-radius: 10px;
     text-align: center;
     font-weight: 600;
     transition: 0.3s;
@@ -275,34 +182,41 @@ body {
     transform: scale(1.05);
 }
 
-/* ============================================================
-   CONTATO & BOTÕES
-   ============================================================ */
-.btn-email {
+.btn-email-pulse, .btn-email {
     display: inline-block;
     padding: 15px 30px;
-    background: var(--glass);
     border: 1px solid var(--primary);
     color: var(--primary);
+    background: var(--glass);
     font-weight: bold;
     text-decoration: none;
     border-radius: 50px;
     transition: 0.3s;
 }
 
-.btn-email:hover {
+.btn-email-pulse:hover, .btn-email:hover {
     background: var(--primary);
     color: #000;
+    box-shadow: 0 0 20px var(--primary);
 }
 
-.main-form { display: flex; flex-direction: column; gap: 15px; margin-top: 20px; }
+/* ============================================================
+   6. CONTATO (DESTAQUE)
+   ============================================================ */
+.contact-glow-card {
+    background: rgba(30, 45, 60, 0.9);
+    border: 2px solid var(--primary);
+    box-shadow: 0 0 40px rgba(0, 255, 153, 0.1);
+}
+
+.main-form { display: flex; flex-direction: column; gap: 15px; }
 .main-form input, .main-form textarea {
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid var(--border);
-    padding: 15px; border-radius: 10px; color: #fff; font-family: inherit;
+    padding: 12px; border-radius: 8px; color: #fff;
 }
 
-.main-form button {
+.main-form button, .btn-send-glow {
     background: var(--primary);
     color: #000;
     border: none;
@@ -313,17 +227,39 @@ body {
     transition: 0.3s;
 }
 
-.main-form button:hover { transform: scale(1.02); box-shadow: 0 0 20px rgba(0, 255, 153, 0.4); }
-
 /* ============================================================
-   RESPONSIVIDADE (MOBILE)
+   7. RESPONSIVIDADE TOTAL (O SEGREDO DO CELULAR)
    ============================================================ */
-@media (max-width: 900px) {
+@media (max-width: 800px) {
+    /* Ajuste do Header para Celular */
+    .nav-content { 
+        flex-direction: column; 
+        gap: 15px; 
+    }
+    
+    .nav-links { 
+        gap: 8px; 
+        flex-wrap: wrap; 
+        justify-content: center; 
+    }
+
+    .nav-links a { 
+        font-size: 0.75rem; 
+        padding: 5px;
+    }
+
     .nav-header { padding: 10px 0; }
-    .nav-links { display: none; } /* Oculta menu no mobile para focar no conteúdo */
-    .hero-grid { grid-template-columns: 1fr; text-align: center; }
-    .hero-right h1 { font-size: 2.2rem; }
+
+    /* Ajuste do Hero para Celular */
+    .hero-grid { 
+        grid-template-columns: 1fr; 
+        text-align: center; 
+        padding-top: 160px; /* Espaço para o menu que agora tem duas linhas */
+    }
+
     .hero-stats { justify-content: center; }
+    .foto-wrapper { width: 160px; height: 160px; }
+    .hero-right h1 { font-size: 2rem; }
 }
 
 footer { text-align: center; padding: 40px; opacity: 0.6; font-size: 0.8rem; border-top: 1px solid var(--border); }
