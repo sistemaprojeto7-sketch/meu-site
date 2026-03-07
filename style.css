@@ -98,11 +98,11 @@ body {
 .foto-wrapper {
     width: 350px;       /* Tamanho ideal: nem grande, nem pequena */
     height: 350px;      /* Mantém a proporção 1:1 */
-    border-radius: 40px; /* Quadrada com cantos suavemente arredondados */
+    border-radius: 24px; /* Quadrada com cantos suavemente arredondados */
     overflow: hidden;
-    margin: 0 auto 40px;
+    margin: 0 auto 20px;
     border: 3px solid var(--primary);
-    box-shadow: 0 0 30px rgba(0, 255, 153, 0.2);
+    box-shadow: 0 0 40px rgba(0, 255, 153, 0.25);
 }
 
 .foto { 
@@ -110,6 +110,24 @@ body {
     height: 100%; 
     object-fit: cover; /* Garante que a foto preencha o quadrado sem distorcer */
 }
+
+/* --- AJUSTE DE ENCAIXE NO CELULAR (O PULO DO GATO) --- */
+@media (max-width: 800px) {
+    .nav-header {
+        padding: 8px 0; /* Diminuímos o respiro interno para a logo maior caber */
+    }
+    
+    .foto-wrapper { 
+        width: 300px;   /* No celular ela fica ainda maior (quase 100% da tela) */
+        height: 300px;
+        max-width: 90%; /* Garante que não encoste nas bordas do aparelho */
+    }
+
+    .hero-right h1 {
+        font-size: 2.2rem; /* Título um pouco maior para acompanhar a foto */
+    }
+}
+
 
 .nome { font-size: 1.8rem; font-weight: 800; }
 .cargo { color: #ccc; font-weight: 400; margin-bottom: 10px; }
@@ -332,6 +350,7 @@ footer { text-align: center; padding: 40px; opacity: 0.6; font-size: 0.8rem; bor
         margin-bottom: 30px;
     }
 }
+
 
 
 
