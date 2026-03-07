@@ -3,77 +3,95 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>InovaFlow — Automação de Processos</title>
+    <title>InovaFlow — Eduardo Florim</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <canvas id="matrix"></canvas>
+    <div class="aurora-bg"></div>
 
-    <header>
-        <div class="logo">
-            <img src="logo.png" alt="InovaFlow Logo" style="height:50px;">
+    <header class="nav-header">
+        <div class="container nav-content">
+            <div class="logo">
+                <img src="logo.png" alt="InovaFlow Logo">
+            </div>
+            <nav class="nav-links">
+                <a href="#topo">Sobre</a>
+                <a href="#portfolio">Portfólio</a>
+                <a href="#depoimentos">Depoimentos</a>
+                <a href="#contact" class="btn-nav">Contato</a>
+            </nav>
         </div>
-        <nav>
-            <a href="#topo">Sobre</a>
-            <a href="#portfolio">Portfólio</a>
-            <a href="#projects">Projetos</a>
-            <a href="#contact" class="btn-contato">Contato</a>
-        </nav>
     </header>
 
     <main>
-        <section id="topo" class="hero">
-            <div class="hero-left">
-                <img src="minhafoto.jpg" alt="Eduardo Florim" class="foto">
-                <h2 class="nome">Eduardo Florim</h2>
-                <p class="cargo">Especialista em Processos | Consultor em IA</p>
-                <a href="https://www.linkedin.com/in/eduardo-florim-b7915930" target="_blank" class="btn-ln">🔗 LinkedIn</a>
-            </div>
+        <section id="topo" class="hero section-padding">
+            <div class="container hero-grid">
+                <div class="hero-left">
+                    <div class="foto-wrapper">
+                        <img src="minhafoto.jpg" alt="Foto de Eduardo Florim" class="foto">
+                    </div>
+                    <h2 class="nome">Eduardo Florim</h2>
+                    <p class="cargo">Especialista em Processos | Consultor em IA</p>
+                    <p class="tagline">Ajudo empresas a reduzir custos e ganhar eficiência com projetos inteligentes de automação e IA.</p>
+                    
+                    <a href="https://www.linkedin.com/in/eduardo-florim-b7915930" target="_blank" class="btn-ln-modern">
+                        🔗 Conectar no LinkedIn
+                    </a>
+                </div>
 
-            <div class="hero-content card">
-                <span class="tag">ESTRATEGISTA DE AUTOMAÇÃO</span>
-                <h1>Soluções que impulsionam o seu <span class="highlight">Negócio.</span></h1>
-                <p>Especialista em automação logística e sistemas autônomos. Construo ativos digitais que integram cérebro (LLMs), memória (dados) e ação (ERP/WMS).</p>
-                <div class="hero-stats">
-                    <div class="stat-item"><strong>+85%</strong><span>Eficiência</span></div>
-                    <div class="stat-item"><strong>ROI</strong><span>Rápido</span></div>
-                    <div class="stat-item"><strong>0%</strong><span>Falhas</span></div>
+                <div class="hero-right card glass-card">
+                    <span class="tag">ESTRATEGISTA DE AUTOMAÇÃO</span>
+                    <h1>Soluções que impulsionam o seu <span class="highlight">Negócio.</span></h1>
+                    <p>Soluções inteligentes de automação e dashboards com segurança de dados e governança corporativa, projetados para aumentar eficiência e reduzir falhas operacionais.</p>
+                    <p>👥 Consultoria especializada para pequenas, médias e grandes operações — Logística, Indústria e Varejo.</p>
+                    
+                    <div class="hero-stats">
+                        <div class="stat-item"><strong>+85%</strong><span>Eficiência</span></div>
+                        <div class="stat-item"><strong>ROI</strong><span>Rápido</span></div>
+                        <div class="stat-item"><strong>0%</strong><span>Falhas</span></div>
+                    </div>
                 </div>
             </div>
         </section>
 
         <section id="sobre-mim" class="container">
-            <div class="card sobre-mim-card">
-                <h2>Sobre Mim</h2>
-                <p>Sou especialista em automação de processos logísticos e atuo na construção de sistemas agênticos aplicados à operação empresarial. Desenvolvo soluções em Python que integram inteligência artificial, dados operacionais e execução direta nos sistemas corporativos (SAP, TOTVS, Protheus, Sythex).</p>
-                <div class="skills-grid">
-                    <p><strong>🛠️ Hard Skills:</strong> Python, APIs REST, Google Sheets, Web Scraping, Integrações WMS/ERP.</p>
+            <div class="card glass-card">
+                <h2 class="section-title-alt">Sobre Mim</h2>
+                <p>👨‍💻 Sou especialista em automação de processos logísticos e atuo na construção de sistemas agênticos aplicados à operação empresarial. Desenvolvo soluções em Python que integram inteligência artificial, dados operacionais e execução direta nos sistemas corporativos, conectando ERPs, WMS e plataformas de gestão para criar fluxos de trabalho autônomos e altamente confiáveis. Esses agentes digitais não apenas executam tarefas repetitivas: monitoram operações, analisam dados em tempo real e suportam decisões estratégicas com base em informações operacionais.</p>
+                
+                <div class="skills-wrapper">
                     <p><strong>💡 Valores:</strong> Qualidade, segurança, agilidade e escalabilidade.</p>
+                    <p><strong>🛠️ Hard Skills:</strong> Python, APIs REST, Google Sheets, Web Scraping, Integrações WMS/ERP.</p>
+                    <p><strong>🤝 Soft Skills:</strong> Comunicação clara, proatividade e foco em resultados.</p>
                 </div>
             </div>
         </section>
 
-        <section id="portfolio" class="container">
-            <h2>Portfólio</h2>
+        <section id="portfolio" class="container section-padding">
+            <h2 class="section-title">Portfólio</h2>
             <div class="portfolio-grid">
-                <div class="card"><h3>Integração WMS ↔ SAP</h3><p>Automação entre sistemas de gestão.</p><ul><li>🚀 Redução de 85% no tempo</li><li>📉 0% de erros</li></ul></div>
-                <div class="card"><h3>Automação Fiscal</h3><p>Agentes que leem NFs automaticamente.</p><ul><li>⏳ Economia de 6h/dia</li><li>📌 Sem multas</li></ul></div>
-                <div class="card"><h3>Dashboards Real-Time</h3><p>KPIs logísticos integrados.</p><ul><li>📊 Visibilidade total</li><li>📈 Decisões baseadas em dados</li></ul></div>
-                <div class="card"><h3>IA Operacional</h3><p>Previsão de rupturas e gargalos.</p><ul><li>🤖 92% de acurácia</li><li>📦 -30% em atrasos</li></ul></div>
-                <div class="card"><h3>IA em Planilhas</h3><p>Agentes autônomos em ERPs.</p><ul><li>📥 Entrada real-time</li><li>⏳ Fim do manual</li></ul></div>
-                <div class="card"><h3>Revisão Contábil</h3><p>Analise de termos e relatórios.</p><ul><li>⚖️ Cálculos precisos</li><li>⏳ -70% de tempo</li></ul></div>
-                <div class="card"><h3>App de Acompanhamento</h3><p>Apps inteligentes para metas.</p><ul><li>📱 Notificações Push</li><li>🔍 Monitoramento</li></ul></div>
-                <div class="card"><h3>Atendimento ao Cliente</h3><p>Chatbots e rastreio 24/7.</p><ul><li>💬 Respostas imediatas</li><li>📈 Fidelização</li></ul></div>
-                <div class="card"><h3>Automação de RH</h3><p>Triagem de currículos e produtividade.</p><ul><li>👥 Seleção automática</li><li>⏳ -60% tempo contratação</li></ul></div>
-                <div class="card"><h3>Controle de Estoques</h3><p>Monitoramento e alertas autônomos.</p><ul><li>📦 Prevenção de rupturas</li><li>⚡ Reposição automática</li></ul></div>
-                <div class="card"><h3>Análise Financeira</h3><p>Consolidação de bancos e ERPs.</p><ul><li>📑 Conciliação automática</li><li>🚀 Relatórios prontos</li></ul></div>
-                <div class="card"><h3>Otimização de Custos</h3><p>Análise de contratos e despesas.</p><ul><li>💰 -20% custos operacionais</li><li>⚖️ Simulações automáticas</li></ul></div>
+                <div class="card"><h3>Integração WMS ↔ SAP</h3><p>Automação da comunicação entre sistemas de gestão e estoque.</p><ul><li>🚀 Redução de 85% no tempo</li><li>📉 0% de erros</li><li>💰 ROI em 2 meses</li></ul></div>
+                <div class="card"><h3>Automação Fiscal</h3><p>Agentes que leem NFs, extraem dados e alimentam ERPs.</p><ul><li>⏳ Economia de 6h/dia</li><li>📑 100% campos capturados</li><li>📌 Sem multas</li></ul></div>
+                <div class="card"><h3>Dashboards Real-Time</h3><p>Monitoramento de KPIs logísticos integrados.</p><ul><li>📊 Visibilidade total</li><li>⚡ Reação 3x rápida</li><li>📈 Dados confiáveis</li></ul></div>
+                <div class="card"><h3>IA Operacional</h3><p>IA para prever rupturas e gargalos em CDs.</p><ul><li>🤖 92% de acurácia</li><li>📦 -30% atrasos</li><li>💡 Alertas via WhatsApp</li></ul></div>
+                <div class="card"><h3>IA em Planilhas</h3><p>Agentes autônomos que monitoram planilhas e ERPs.</p><ul><li>📥 Entrada real-time</li><li>📌 Alertas inteligentes</li><li>⏳ Fim do manual</li></ul></div>
+                <div class="card"><h3>Revisão Contábil</h3><p>Agentes que analisam termos e revisam cálculos.</p><ul><li>📑 Conferência automática</li><li>⚖️ Cálculos precisos</li><li>⏳ -70% tempo revisão</li></ul></div>
+                <div class="card"><h3>App de Acompanhamento</h3><p>Apps inteligentes para acompanhar processos e metas.</p><ul><li>📱 Notificações Push</li><li>🔍 Monitoramento contínuo</li><li>🚀 Reduz supervisão</li></ul></div>
+                <div class="card"><h3>Atendimento ao Cliente</h3><p>Chatbots que rastreiam pedidos e suporte 24/7.</p><ul><li>💬 Respostas imediatas</li><li>⏳ -80% tempo suporte</li><li>📈 Fidelização</li></ul></div>
+                <div class="card"><h3>Automação de RH</h3><p>Triagem de currículos e relatórios de desempenho.</p><ul><li>👥 Seleção automática</li><li>📊 ROI em tempo real</li><li>⏳ -60% tempo contratação</li></ul></div>
+                <div class="card"><h3>Controle de Estoques</h3><p>Monitoramento e sugestão de compras autônomas.</p><ul><li>📦 Prevenção de rupturas</li><li>💰 Compras assertivas</li><li>⚡ Reposição automática</li></ul></div>
+                <div class="card"><h3>Análise Financeira</h3><p>Consolidação de dados bancários e ERPs.</p><ul><li>📑 Conciliação auto</li><li>📉 Identificação gastos</li><li>🚀 Relatórios minutos</li></ul></div>
+                <div class="card"><h3>Otimização de Custos</h3><p>Análise de contratos para sugerir economias.</p><ul><li>💰 -20% custos operais</li><li>📊 Insights tempo real</li><li>⚖️ Simulação cenários</li></ul></div>
             </div>
         </section>
 
-        <section id="depoimentos" class="container">
-            <h2>Resultados que transformam</h2>
+        <section id="email-botao" style="text-align:center; margin:40px 0;">
+            <a href="mailto:inovaflow0@gmail.com" target="_blank" class="btn-email">✉️ Email: inovaflow0@gmail.com</a>
+        </section>
+
+        <section id="depoimentos" class="container section-padding">
+            <h2 class="section-title">Resultados que transformam</h2>
             <div class="depoimentos-grid">
                 <div class="card"><p>“Reduzimos de 3h para minutos o processamento de NFs.”</p><h4>— Gestor de Operações</h4></div>
                 <div class="card"><p>“Dashboard nos deu visibilidade real.”</p><h4>— Gerente Supply Chain</h4></div>
@@ -90,8 +108,8 @@
             </div>
         </section>
 
-        <section id="projects" class="container">
-            <h2>Projetos & Automações</h2>
+        <section id="projects" class="container section-padding">
+            <h2 class="section-title">Projetos & Automações</h2>
             <div class="projects-grid">
                 <div class="project-card">📦 Notas Fiscais no WMS</div>
                 <div class="project-card">🚚 Otimização de Rotas</div>
@@ -105,24 +123,27 @@
                 <div class="project-card">⚡ Workflows Ágeis</div>
                 <div class="project-card">🔍 Auditoria Digital</div>
                 <div class="project-card">💻 Consolidação Dados</div>
+                <div class="project-card">🚀 Onboarding Automático</div>
+                <div class="project-card">🔔 Monitoramento 24/7</div>
             </div>
         </section>
 
-        <section id="contact" class="container">
-            <div class="card">
-                <h2>Contato</h2>
+        <section id="contact" class="container section-padding">
+            <div class="card glass-card contact-wrapper">
+                <div class="contact-header">
+                    <h2>Vamos transformar suas ideias?</h2>
+                    <p>Entre em contato e comece a automatizar.</p>
+                </div>
                 <form name="contato" method="POST" data-netlify="true" class="main-form">
-                    <input type="text" name="nome" placeholder="Seu Nome" required>
-                    <input type="email" name="email" placeholder="Seu E-mail" required>
-                    <textarea name="mensagem" placeholder="Sua Mensagem" required></textarea>
-                    <button type="submit">Enviar</button>
+                    <input type="text" name="nome" placeholder="Nome" required>
+                    <input type="email" name="email" placeholder="E-mail" required>
+                    <textarea name="mensagem" placeholder="Mensagem" required></textarea>
+                    <button type="submit">Enviar Proposta</button>
                 </form>
             </div>
         </section>
     </main>
 
-    <footer>© 2026 InovaFlow — Eduardo Florim</footer>
-
-    <script src="background-canvas.js"></script>
+    <footer>© 2026 InovaFlow — Eduardo Florim | Todos os direitos reservados.</footer>
 </body>
 </html>
