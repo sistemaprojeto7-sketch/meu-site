@@ -191,5 +191,23 @@
     <footer>© 2026 InovaFlow — Eduardo Florim | Todos os direitos reservados.</footer>
 </body>
 </html>
+  <script>
+    const form = document.querySelector('form[name="contato"]');
+    const successMessage = document.getElementById('success-message');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const data = new FormData(form);
+      fetch('/', { method: 'POST', body: data })
+      .then(() => {
+        form.reset();
+        successMessage.style.display = 'block';
+        window.scrollTo({top: form.offsetTop - 100, behavior: 'smooth'});
+      })
+      .catch(err => alert('Erro ao enviar formulário: '+err));
+    });
+  </script>
+</body>
+</html>
 
 
