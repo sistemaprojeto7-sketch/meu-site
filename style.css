@@ -281,3 +281,43 @@ body {
 
 footer { text-align: center; padding: 40px; opacity: 0.6; font-size: 0.8rem; border-top: 1px solid var(--border); }
 
+/* ============================================================
+   TÍTULOS DAS SEÇÕES (CENTRALIZADOS E VERDES)
+   ============================================================ */
+.section-title, 
+#portfolio h2, 
+#depoimentos h2, 
+#projects h2, 
+#sobre-mim h2 {
+    font-size: 2.5rem;
+    color: var(--primary) !important; /* Verde neon */
+    text-align: center !important;    /* Centralização forçada */
+    margin: 0 auto 40px;             /* Centraliza o bloco e dá margem inferior */
+    width: 100%;                     /* Garante que ocupe a largura total para alinhar o texto */
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 20px rgba(0, 255, 153, 0.3); /* Brilho verde suave */
+}
+
+/* Ajuste específico para o "Sobre Mim" não ficar colado */
+.section-title-alt {
+    color: var(--primary);
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 25px;
+    font-weight: 800;
+}
+
+/* RESPONSIVIDADE PARA TÍTULOS NO CELULAR */
+@media (max-width: 768px) {
+    .section-title, 
+    #portfolio h2, 
+    #depoimentos h2, 
+    #projects h2, 
+    #sobre-mim h2 {
+        font-size: 1.8rem; /* Reduz um pouco no celular para não quebrar linha */
+        margin-bottom: 30px;
+    }
+}
+
