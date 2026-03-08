@@ -151,12 +151,21 @@ body { background-color: var(--dark-bg); color: #fff; font-family: 'Inter', sans
     filter: drop-shadow(0 0 5px rgba(0, 255, 153, 0.3));
 }
 
+.portfolio-grid {
+    display: grid;
+    /* Isso faz os cards se ajustarem sozinhos e ficarem centralizados se sobrar espaço */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+    gap: 30px;
+    justify-content: center; 
+}
+
 .portfolio-grid .card {
     display: flex;
     flex-direction: column;
-    align-items: flex-start; 
+    align-items: flex-start; /* No PC, o conteúdo (ícone/texto) fica à esquerda */
     text-align: left;
     padding: 35px;
+    height: 100%; /* Garante que todos os cards tenham a mesma altura na linha */
 }
 
 .portfolio-grid .card h3 {
@@ -295,14 +304,17 @@ body { background-color: var(--dark-bg); color: #fff; font-family: 'Inter', sans
     .depoimentos-grid { display: flex; flex-direction: column; align-items: center; gap: 20px; }
 
    .portfolio-grid {
-        grid-template-columns: 1fr !important; /* Força 1 coluna no celular */
-        gap: 20px;
+        grid-template-columns: 1fr !important; 
+        justify-items: center; 
     }
-
     .portfolio-grid .card {
-        padding: 25px;
-        align-items: center; /* Opcional: centraliza o ícone e texto no celular */
+        align-items: center; 
         text-align: center;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    .portfolio-grid .card li {
+        justify-content: center; 
     }
     
     .portfolio-grid .card li {
@@ -312,6 +324,7 @@ body { background-color: var(--dark-bg); color: #fff; font-family: 'Inter', sans
 } /* Fim da Media Query */
 
 footer { text-align: center; padding: 40px; opacity: 0.6; font-size: 0.8rem; border-top: 1px solid var(--border); }
+
 
 
 
