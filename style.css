@@ -51,8 +51,15 @@ body { background-color: var(--dark-bg); color: #fff; font-family: 'Inter', sans
 
 .intro-text { margin-bottom: 25px; text-align: center; }
 .intro-title { display: block; font-size: 0.85rem; font-weight: 800; color: var(--primary); text-transform: uppercase; letter-spacing: 3px; margin-bottom: 8px; }
+/* Estilo específico para o Flow dentro da frase de impacto */
+.highlight-flow {
+    color: var(--primary);
+    font-weight: 800;
+}
+
+/* Garante que o negrito na frase também seja verde e forte */
 .intro-desc strong {
-    color: var(--primary); /* Isso deixa as palavras importantes em Verde Neon */
+    color: var(--primary);
     font-weight: 800;
 }
 
@@ -200,4 +207,5 @@ body { background-color: var(--dark-bg); color: #fff; font-family: 'Inter', sans
 }
 
 footer { text-align: center; padding: 40px; opacity: 0.6; font-size: 0.8rem; border-top: 1px solid var(--border); }
+
 
