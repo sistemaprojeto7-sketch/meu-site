@@ -360,77 +360,77 @@ footer { text-align: center; padding: 40px; opacity: 0.6; font-size: 0.8rem; bor
     margin-left: -50vw;
     margin-right: -50vw;
     overflow: hidden;
-    padding: 30px 0;
+    padding: 40px 0;
 }
 
 .carousel-track {
     display: flex;
     width: max-content;
-    gap: 25px;
-    animation: scroll-loop 40s linear infinite;
-    will-change: transform;
+    gap: 30px;
+    animation: scroll-loop 45s linear infinite; /* Roda um pouco mais devagar para leitura */
+}
+
+/* FUNÇÃO QUE PARA O CARROSSEL NO MOUSE */
+.carousel-track:hover {
+    animation-play-state: paused !important;
+    cursor: pointer;
 }
 
 .project-slide {
-    width: 320px;
+    width: 340px;
     flex-shrink: 0;
     background: var(--glass);
-    border: 1px solid var(--border);
     border-radius: 20px;
     overflow: hidden;
-    transition: 0.3s;
+    border: 1px solid var(--border);
+    display: flex;          /* NOVO: Garante que o card controle o espaço interno */
+    flex-direction: column; /* Organiza imagem e texto em coluna */
+    transition: 0.4s ease;
 }
 
-/* --- CONTEÚDO DO SLIDE COM DESTAQUE DE CORES --- */
+/* DESTAQUE AO PASSAR O MOUSE NO CARD */
+.project-slide:hover {
+    border-color: var(--primary);
+    transform: scale(1.02);
+    background: rgba(0, 255, 153, 0.08);
+}
+
+.project-slide img {
+    width: 100%;
+    height: 200px;         /* Altura fixa para a imagem não esticar */
+    object-fit: cover;
+    border-bottom: 2px solid var(--primary);
+}
+
 .slide-content {
-    padding: 20px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;          /* Força o conteúdo a preencher o espaço de forma igual */
+    justify-content: flex-start;
+    min-height: 180px;     /* NOVO: Define uma altura mínima para os textos ficarem iguais */
 }
 
 .slide-content h4 {
     color: var(--primary);
-    font-size: 1.1rem;
     margin-bottom: 15px;
-    font-weight: 800;
-    text-transform: uppercase;
+    font-size: 1.1rem;
+    height: 2.4em;         /* Garante que títulos de 1 ou 2 linhas ocupem o mesmo espaço */
+    display: flex;
+    align-items: center;
 }
 
-/* DESTAQUE: DOR (VERMELHO) */
 .slide-content .dor {
-    color: #ff6b6b; /* Vermelho suave para a dor */
+    color: #ff6b6b;
     font-size: 0.9rem;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
     font-weight: 600;
-    line-height: 1.4;
-    text-shadow: 0 0 5px rgba(255, 107, 107, 0.2);
 }
 
-/* DESTAQUE: GANHO (VERDE NEON) */
 .slide-content .ganho {
-    color: var(--primary); /* Verde para o benefício */
+    color: var(--primary);
     font-size: 0.9rem;
     font-weight: 700;
-    line-height: 1.4;
-    text-shadow: 0 0 8px rgba(0, 255, 153, 0.3);
-}
-
-/* --- AJUSTES PARA CELULAR E TABLET --- */
-@media (max-width: 900px) {
-    .carousel-wrapper {
-        display: block !important;
-        visibility: visible !important;
-    }
-
-    .project-slide {
-        width: 280px;
-    }
-
-    .carousel-track {
-        animation-duration: 30s;
-        gap: 15px;
-    }
-
-    .slide-content h4 { font-size: 1rem; }
-    .slide-content .dor, .slide-content .ganho { font-size: 0.85rem; }
 }
 
 /* ANIMAÇÃO */
@@ -438,6 +438,7 @@ footer { text-align: center; padding: 40px; opacity: 0.6; font-size: 0.8rem; bor
     0% { transform: translateX(0); }
     100% { transform: translateX(-50%); }
 }
+
 
 
 
