@@ -51,7 +51,10 @@ body { background-color: var(--dark-bg); color: #fff; font-family: 'Inter', sans
 
 .intro-text { margin-bottom: 25px; text-align: center; }
 .intro-title { display: block; font-size: 0.85rem; font-weight: 800; color: var(--primary); text-transform: uppercase; letter-spacing: 3px; margin-bottom: 8px; }
-.intro-desc { font-size: 0.95rem; opacity: 0.9; max-width: 400px; margin: 0 auto; line-height: 1.4; }
+.intro-desc strong {
+    color: var(--primary); /* Isso deixa as palavras importantes em Verde Neon */
+    font-weight: 800;
+}
 
 .foto-container { 
     position: relative; width: 350px; height: 350px; margin: 0 auto 20px; 
@@ -197,3 +200,4 @@ body { background-color: var(--dark-bg); color: #fff; font-family: 'Inter', sans
 }
 
 footer { text-align: center; padding: 40px; opacity: 0.6; font-size: 0.8rem; border-top: 1px solid var(--border); }
+
