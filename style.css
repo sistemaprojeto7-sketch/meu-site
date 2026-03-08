@@ -365,37 +365,66 @@ body {
 
 
 
-/* --- ÍCONES DE DEPOIMENTOS (REDUZIDOS E INTERATIVOS) --- */
+/* --- ÍCONES DE DEPOIMENTOS (CENTRALIZADOS E INTERATIVOS) --- */
 .testimonial-icon {
-    width: 28px;               /* Reduzido para um tamanho mais elegante */
+    width: 28px;
     height: 28px;
-    margin-bottom: 15px;
-    color: var(--primary);     /* Verde neon original */
+    /* Centralização: margin auto garante o meio no notebook e celular */
+    margin: 0 auto 20px auto; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    color: var(--primary);
     cursor: pointer;
     transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    user-select: none;         /* Evita selecionar o ícone ao clicar rápido */
+    user-select: none;
 }
 
-/* Efeito de Destaque no Hover (Mouse) */
+/* Centralização do conteúdo do card de depoimento */
+.depoimentos-grid .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;    /* Centraliza os itens no eixo horizontal */
+    text-align: center;     /* Centraliza o texto (p e h4) */
+    justify-content: flex-start;
+}
+
+/* Efeitos de Interação */
 .testimonial-icon:hover {
     transform: scale(1.2);
     filter: drop-shadow(0 0 8px var(--primary));
 }
 
-/* Efeito de Destaque ao Clicar (Click/Touch) */
 .testimonial-icon:active {
-    transform: scale(0.9);      /* Efeito de "pressionar" */
+    transform: scale(0.9);
     filter: drop-shadow(0 0 15px var(--primary));
-    color: #fff;                /* Muda levemente para branco no clique para brilhar mais */
+    color: #fff;
 }
 
 .testimonial-icon svg {
     width: 100%;
     height: 100%;
-    stroke-width: 2.5px;        /* Deixa o traço um pouco mais firme por ser menor */
+    stroke-width: 2.5px;
+}
+
+/* --- AJUSTE RESPONSIVO ADICIONAL --- */
+@media (max-width: 900px) {
+    .depoimentos-grid {
+        display: flex;
+        flex-direction: column; /* No celular, um depoimento abaixo do outro */
+        align-items: center;
+        gap: 20px;
+    }
+
+    .depoimentos-grid .card {
+        width: 100%;           /* Ocupa a largura total disponível */
+        max-width: 400px;      /* Mas não fica largo demais em tablets */
+    }
 }
 
 
 footer { text-align: center; padding: 40px; opacity: 0.6; font-size: 0.8rem; border-top: 1px solid var(--border); }
+
 
 
