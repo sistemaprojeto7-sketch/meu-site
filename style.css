@@ -195,6 +195,7 @@ body { background-color: var(--dark-bg); color: #fff; font-family: 'Inter', sans
    8. RESPONSIVIDADE TOTAL (NOTEBOOK, TABLET, CELULAR)
    ============================================================ */
 @media (max-width: 900px) {
+    /* Menu e Header */
     .nav-content { flex-direction: column; gap: 15px; text-align: center; }
     .logo-area { gap: 10px; justify-content: center; }
     .logo-area img { height: 50px; }
@@ -202,23 +203,45 @@ body { background-color: var(--dark-bg); color: #fff; font-family: 'Inter', sans
     .nav-links { gap: 8px; flex-wrap: wrap; justify-content: center; }
     .nav-links a { font-size: 0.75rem; padding: 5px; }
 
+    /* Hero e Foto */
     .hero { padding-top: 200px; }
     .hero-grid { grid-template-columns: 1fr; text-align: center; }
     .foto-container { width: 300px; height: 300px; max-width: 90%; }
     .foto-wrapper { width: 75%; height: 75%; }
-    
     .hero-right h1 { font-size: 2rem; }
-    .hero-stats { justify-content: center; gap: 15px; flex-wrap: wrap; }
-    .hero-stats .stat-item { flex: 1 1 40%; }
 
+    /* Estatísticas (Grade 2x1) */
+    .hero-stats {
+        display: grid; 
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 20px;
+        margin-top: 30px;
+        justify-items: center; 
+    }
+
+    /* Faz o terceiro item ocupar a linha inteira sozinho embaixo */
+    .stat-item:last-child {
+        grid-column: span 2; 
+        border-top: 1px solid var(--border); 
+        padding-top: 15px;
+        width: 100%;
+    }
+
+    .stat-item strong { font-size: 1.8rem; }
+    .stat-item span { font-size: 0.85rem; letter-spacing: 1px; text-transform: uppercase; }
+
+    /* Grids e Carrossel */
     .about-grid { grid-template-columns: 1fr; }
     .project-slide { width: 280px; }
     
+    /* Títulos e Depoimentos */
     .section-title, #portfolio h2, #depoimentos h2, #projects h2, #sobre-mim h2 { font-size: 1.8rem; }
     .depoimentos-grid { display: flex; flex-direction: column; align-items: center; gap: 20px; }
-}
+    
+} /* <--- ESSA CHAVE FECHA TUDO CORRETAMENTE */
 
 footer { text-align: center; padding: 40px; opacity: 0.6; font-size: 0.8rem; border-top: 1px solid var(--border); }
+
 
 
 
