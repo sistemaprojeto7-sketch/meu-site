@@ -51,14 +51,22 @@ body { background-color: var(--dark-bg); color: #fff; font-family: 'Inter', sans
 
 .intro-text { margin-bottom: 25px; text-align: center; }
 .intro-title { display: block; font-size: 0.85rem; font-weight: 800; color: var(--primary); text-transform: uppercase; letter-spacing: 3px; margin-bottom: 8px; }
+/* Garante que o texto negritado seja branco por padrão */
 .intro-desc strong {
-    color: var(--primary); /* Isso deixa as palavras importantes em Verde Neon */
+    color: #fff;
     font-weight: 800;
 }
-/* Estilo específico para o Flow dentro da frase de impacto */
-.highlight-FLOW {
+
+/* Pinta APENAS o Flow de verde neon */
+.highlight-flow {
     color: var(--primary);
     font-weight: 800;
+}
+
+/* Mantém os termos de ação em verde para destaque total */
+.intro-desc strong:nth-of-type(2), 
+.intro-desc strong:nth-of-type(3) {
+    color: var(--primary);
 }
 
 /* Garante que o negrito na frase também seja verde e forte */
@@ -211,5 +219,6 @@ body { background-color: var(--dark-bg); color: #fff; font-family: 'Inter', sans
 }
 
 footer { text-align: center; padding: 40px; opacity: 0.6; font-size: 0.8rem; border-top: 1px solid var(--border); }
+
 
 
