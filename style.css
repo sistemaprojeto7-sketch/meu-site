@@ -351,6 +351,79 @@ footer { text-align: center; padding: 40px; opacity: 0.6; font-size: 0.8rem; bor
     }
 }
 
+/* --- CARROSSEL INFINITO --- */
+.carousel-wrapper {
+    width: 100%;
+    overflow: hidden; /* Esconde o que sai da tela */
+    padding: 20px 0;
+    position: relative;
+}
+
+.carousel-track {
+    display: flex;
+    width: max-content; /* Permite que o conteúdo cresça horizontalmente */
+    gap: 30px;
+    animation: scroll-loop 40s linear infinite; /* Roda devagar */
+}
+
+/* Pausa ao passar o mouse para o cliente ler */
+.carousel-track:hover {
+    animation-play-state: paused;
+}
+
+.project-slide {
+    width: 320px; /* Largura fixa para manter o padrão */
+    background: var(--glass);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.project-slide img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-bottom: 2px solid var(--primary);
+}
+
+.slide-content {
+    padding: 20px;
+}
+
+.slide-content h4 {
+    color: var(--primary);
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+    font-weight: 800;
+}
+
+.slide-content p {
+    font-size: 0.85rem;
+    line-height: 1.4;
+    margin-bottom: 8px;
+}
+
+.slide-content .dor {
+    color: #ff6b6b; /* Vermelho suave para a dor */
+}
+
+.slide-content .ganho {
+    color: var(--primary); /* Verde para o benefício */
+}
+
+/* ANIMAÇÃO DO LOOP */
+@keyframes scroll-loop {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); } /* Move metade (já que os itens estão duplicados) */
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 800px) {
+    .project-slide {
+        width: 280px; /* Um pouco menor no celular */
+    }
+}
 
 
 
