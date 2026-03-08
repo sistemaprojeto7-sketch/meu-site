@@ -1,5 +1,5 @@
 /* ============================================================
-   1. VARIÁVEIS E BASE
+   1. CONFIGURAÇÕES BASE & AURORA 2026
    ============================================================ */
 :root {
     --primary: #00ff99;
@@ -11,10 +11,19 @@
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-body { background-color: var(--dark-bg); color: #fff; font-family: 'Inter', sans-serif; line-height: 1.6; overflow-x: hidden; }
+body { 
+    background-color: var(--dark-bg); 
+    color: #fff; 
+    font-family: 'Inter', sans-serif; 
+    line-height: 1.6; 
+    overflow-x: hidden; 
+}
 
+/* Fundo Animado Aurora */
 .aurora-bg {
-    position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    z-index: -1;
     background: radial-gradient(circle at 15% 20%, rgba(108, 76, 255, 0.15), transparent 40%),
                 radial-gradient(circle at 85% 80%, rgba(0, 255, 153, 0.1), transparent 40%);
 }
@@ -24,49 +33,83 @@ body { background-color: var(--dark-bg); color: #fff; font-family: 'Inter', sans
 .highlight { color: var(--primary); font-weight: 800; }
 
 /* ============================================================
-   2. HEADER & LOGO AREA
+   2. HEADER & LOGO AREA (IMCOMPONENTE)
    ============================================================ */
 .nav-header {
     position: fixed; width: 100%; padding: 12px 0;
-    background: rgba(5, 5, 10, 0.95); backdrop-filter: blur(15px);
-    z-index: 1000; border-bottom: 1px solid var(--border);
+    background: rgba(5, 5, 10, 0.95);
+    backdrop-filter: blur(15px);
+    z-index: 1000;
+    border-bottom: 1px solid var(--border);
 }
+
 .nav-content { display: flex; justify-content: space-between; align-items: center; }
 
 .logo-area { display: flex; align-items: center; gap: 12px; }
-.logo-area img { height: 75px; width: auto; }
-.brand-name { font-size: 1.4rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; }
+/* Logo grande e imponente de 85px restaurada */
+.logo-area img { height: 85px; width: auto; transition: 0.3s; }
+.brand-name { font-size: 1.4rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; color: #fff; }
 .brand-name span { color: var(--primary); }
 
-.nav-links { display: flex; align-items: center; gap: 15px; }
-.nav-links a { text-decoration: none; color: #fff; font-size: 0.85rem; font-weight: 600; transition: 0.3s; }
+.nav-links { display: flex; align-items: center; gap: 20px; }
+.nav-links a { text-decoration: none; color: #fff; font-size: 0.9rem; font-weight: 600; transition: 0.3s; }
 .nav-links a:hover { color: var(--primary); }
-.btn-nav { background: var(--primary); color: #000 !important; padding: 8px 16px; border-radius: 50px; font-weight: 800; }
+
+.btn-nav { 
+    background: var(--primary); color: #000 !important; 
+    padding: 10px 20px; border-radius: 50px; font-weight: 800;
+    box-shadow: 0 0 15px rgba(0, 255, 153, 0.3);
+}
 
 /* ============================================================
-   3. HERO & FOTO COMPOSITION
+   3. HERO & COMPOSIÇÃO DE FOTO (CORREÇÃO DE MOLDURA)
    ============================================================ */
-.hero { padding-top: 140px; }
-.hero-grid { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 40px; align-items: center; }
+.hero { padding-top: 180px; } /* Espaço para o menu imponente */
+.hero-grid { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 50px; align-items: center; }
 
 .intro-text { margin-bottom: 25px; text-align: center; }
 .intro-title { display: block; font-size: 0.85rem; font-weight: 800; color: var(--primary); text-transform: uppercase; letter-spacing: 3px; margin-bottom: 8px; }
 .intro-desc { font-size: 0.95rem; opacity: 0.9; max-width: 400px; margin: 0 auto; line-height: 1.4; }
 
-.foto-container { position: relative; width: 350px; height: 350px; margin: 0 auto 20px; }
+/* O segredo da moldura futurista */
+.foto-container {
+    position: relative;
+    width: 350px; height: 350px; /* Tamanho do contêiner total */
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centraliza sua foto dentro da moldura */
+}
+
+/* Moldura Futurista (Fica atrás) */
 .foto-bg-futuristic {
-    position: absolute; top: -15px; left: -15px; width: 100%; height: 100%;
-    border-radius: 30px; overflow: hidden; z-index: 1; opacity: 0.4; filter: blur(2px);
-    border: 1px solid var(--primary);
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%; /* Ocupa o tamanho total do contêiner */
+    border-radius: 30px;
+    overflow: hidden;
+    z-index: 1;
+    opacity: 0.6; /* Sutil */
+    border: 1px solid rgba(0, 255, 153, 0.3);
+    box-shadow: 0 0 30px rgba(0, 255, 153, 0.1);
 }
 .foto-bg-futuristic img { width: 100%; height: 100%; object-fit: cover; }
 
+/* Sua Foto (Fica na frente e menor para criar a moldura) */
 .foto-wrapper {
-    position: relative; width: 100%; height: 100%; border-radius: 24px;
-    overflow: hidden; z-index: 2; border: 3px solid var(--primary);
-    box-shadow: 0 0 40px rgba(0, 255, 153, 0.25);
+    position: relative;
+    width: 85%; height: 85%; /* MENOR: Cria o espaço para o fundo aparecer */
+    border-radius: 20px;
+    overflow: hidden;
+    z-index: 2; /* Acima do fundo */
+    border: 3px solid var(--primary);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 .foto { width: 100%; height: 100%; object-fit: cover; }
+
+.nome { font-size: 1.8rem; font-weight: 800; }
+.cargo { color: #ccc; font-weight: 400; margin-bottom: 10px; }
+.tagline { opacity: 0.8; font-size: 1rem; margin-bottom: 20px; }
 
 .btn-ln-glow {
     display: inline-block; padding: 12px 24px; border-radius: 10px;
@@ -80,17 +123,7 @@ body { background-color: var(--dark-bg); color: #fff; font-family: 'Inter', sans
 .stat-item strong { display: block; font-size: 1.4rem; color: var(--primary); }
 
 /* ============================================================
-   4. SOBRE MIM & CARDS
-   ============================================================ */
-.about-card-featured { border-left: 5px solid var(--primary); }
-.about-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 40px; }
-.skill-pill { background: rgba(255, 255, 255, 0.05); padding: 15px; border-radius: 12px; margin-bottom: 10px; border: 1px solid var(--border); font-size: 0.9rem; }
-
-.card { background: var(--glass); border: 1px solid var(--border); padding: 25px; border-radius: 15px; transition: 0.4s; }
-.card:hover { transform: translateY(-10px); border-color: var(--primary); box-shadow: 0 15px 35px rgba(0, 255, 153, 0.2); }
-
-/* ============================================================
-   5. TITULOS & CARROSSEL
+   4. TÍTULOS & CARROSSEL (DOR VS GANHO - LISO)
    ============================================================ */
 .section-title, #portfolio h2, #depoimentos h2, #projects h2, #sobre-mim h2 {
     font-size: 2.5rem; color: var(--primary) !important; text-align: center !important;
@@ -100,44 +133,131 @@ body { background-color: var(--dark-bg); color: #fff; font-family: 'Inter', sans
 
 .carousel-wrapper { width: 100vw; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; overflow: hidden; padding: 40px 0; }
 .carousel-track { display: flex; width: max-content; gap: 30px; animation: scroll-loop 45s linear infinite; }
-.carousel-track:hover { animation-play-state: paused !important; }
+/* Para ao passar o mouse */
+.carousel-track:hover { animation-play-state: paused !important; cursor: pointer; }
 
-.project-slide { width: 340px; flex-shrink: 0; background: var(--glass); border-radius: 20px; overflow: hidden; border: 1px solid var(--border); display: flex; flex-direction: column; transition: 0.4s; }
+.project-slide { 
+    width: 340px; flex-shrink: 0; background: var(--glass); 
+    border-radius: 20px; overflow: hidden; border: 1px solid var(--border); 
+    display: flex; flex-direction: column; transition: 0.4s; 
+}
 .project-slide img { width: 100%; height: 200px; object-fit: cover; border-bottom: 2px solid var(--primary); }
+/* Alinhamento de texto Dor vs Ganho */
 .slide-content { padding: 25px; display: flex; flex-direction: column; flex-grow: 1; min-height: 180px; }
-.slide-content .dor { color: #ff6b6b; font-size: 0.9rem; margin-bottom: 12px; font-weight: 600; }
+.slide-content h4 { color: var(--primary); margin-bottom: 12px; font-size: 1.1rem; font-weight: 800; text-transform: uppercase; height: 2.4em; display: flex; align-items: center; }
+.slide-content .dor { color: #ff6b6b; font-size: 0.9rem; margin-bottom: 10px; font-weight: 600; }
 .slide-content .ganho { color: var(--primary); font-size: 0.9rem; font-weight: 700; }
 
 @keyframes scroll-loop { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
 /* ============================================================
-   6. TESTIMONIAL ICONS
+   5. DEPOIMENTOS & ÍCONES (CENTRALIZADOS & INTERATIVOS)
    ============================================================ */
-.testimonial-icon { width: 28px; height: 28px; margin: 0 auto 20px auto; display: flex; align-items: center; justify-content: center; color: var(--primary); cursor: pointer; transition: 0.3s; }
-.depoimentos-grid .card { display: flex; flex-direction: column; align-items: center; text-align: center; }
+.depoimentos-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+.depoimentos-grid .card { 
+    display: flex; flex-direction: column; 
+    align-items: center; text-align: center; /* CENTRALIZAÇÃO TOTAL */
+    justify-content: flex-start;
+}
+.testimonial-icon { 
+    width: 28px; height: 28px; margin: 0 auto 20px auto; /* Centraliza o ícone */
+    display: flex; align-items: center; justify-content: center; 
+    color: var(--primary); cursor: pointer; transition: 0.3s; user-select: none;
+}
+.testimonial-icon:hover { transform: scale(1.2); filter: drop-shadow(0 0 8px var(--primary)); }
+.testimonial-icon:active { transform: scale(0.9); filter: drop-shadow(0 0 15px var(--primary)); color: #fff; }
 .testimonial-icon svg { width: 100%; height: 100%; stroke-width: 2.5px; }
+
+/* ============================================================
+   6. CONTATO & RESTAURAÇÃO DE FORMULÁRIO E E-MAIL
+   ============================================================ */
+/* CORREÇÃO: E-mail Verde Pulse (Remove o Roxo) */
+.btn-email-pulse, .btn-email-pulse:visited {
+    display: inline-block; padding: 15px 30px;
+    border: 2px solid var(--primary);
+    color: var(--primary) !important; /* Força o verde, ignorando o visitado */
+    background: var(--glass);
+    font-weight: bold; text-decoration: none; border-radius: 50px;
+    transition: 0.3s;
+    animation: email-pulse 2s infinite;
+    text-shadow: 0 0 5px rgba(0, 255, 153, 0.5);
+}
+.btn-email-pulse:hover {
+    background: var(--primary);
+    color: #000 !important;
+    box-shadow: 0 0 30px var(--primary);
+    animation: none; /* Para o pulso no hover */
+}
+@keyframes email-pulse {
+    0% { box-shadow: 0 0 0 0 rgba(0, 255, 153, 0.4); }
+    70% { box-shadow: 0 0 0 15px rgba(0, 255, 153, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(0, 255, 153, 0); }
+}
+
+/* RESTAURAÇÃO: Visual do Formulário */
+.contact-glow-card { background: rgba(30, 45, 60, 0.9); border: 2px solid var(--primary); box-shadow: 0 0 40px rgba(0, 255, 153, 0.1); }
+.main-form { display: flex; flex-direction: column; gap: 15px; }
+.main-form input, .main-form textarea {
+    background: rgba(255, 255, 255, 0.05); /* Efeito Vidro */
+    border: 1px solid var(--border);
+    padding: 15px; border-radius: 10px; color: #fff;
+    font-family: 'Inter', sans-serif; transition: 0.3s;
+}
+.main-form input:focus, .main-form textarea:focus {
+    border-color: var(--primary); background: rgba(0, 255, 153, 0.05); outline: none;
+    box-shadow: 0 0 10px rgba(0, 255, 153, 0.2);
+}
+.main-form button {
+    background: var(--primary); color: #000; border: none;
+    padding: 18px; border-radius: 10px; font-weight: 800;
+    cursor: pointer; transition: 0.3s; text-transform: uppercase;
+}
+.main-form button:hover { transform: scale(1.02); box-shadow: 0 5px 20px rgba(0, 255, 153, 0.3); }
 
 /* ============================================================
    7. RESPONSIVIDADE TOTAL (NOTEBOOK, TABLET, CELULAR)
    ============================================================ */
 @media (max-width: 900px) {
+    /* Header Mobile (Alinhado) */
     .nav-content { flex-direction: column; gap: 15px; }
-    .logo-area { flex-direction: column; gap: 5px; }
-    .logo-area img { height: 60px; }
+    .logo-area { gap: 8px; }
+    .logo-area img { height: 60px; } /* Encolhe um pouco no celular */
     .brand-name { font-size: 1.1rem; }
     .nav-links { gap: 10px; flex-wrap: wrap; justify-content: center; }
+    .nav-links a { font-size: 0.75rem; padding: 5px; }
 
-    .hero { padding-top: 200px; }
+    /* Hero Mobile (Empilhado e Centralizado) */
+    .hero { padding-top: 180px; }
     .hero-grid { grid-template-columns: 1fr; text-align: center; }
-    .foto-container { width: 300px; height: 300px; max-width: 90%; }
-    .hero-right h1 { font-size: 2.2rem; }
-    .hero-stats { justify-content: center; }
-
-    .about-grid { grid-template-columns: 1fr; }
-    .project-slide { width: 280px; }
     
-    .section-title, #portfolio h2, #depoimentos h2, #projects h2, #sobre-mim h2 { font-size: 1.8rem; }
+    /* Foto Mobile (Mantém a proporção da moldura) */
+    .foto-container { width: 300px; height: 300px; max-width: 90%; }
+    /* Mantém o 85% para a foto principal dentro do contêiner mobile */
+    .foto-wrapper { width: 85%; height: 85%; }
+    
+    .hero-right h1 { font-size: 2.2rem; }
+    .hero-stats { justify-content: center; gap: 15px; flex-wrap: wrap; }
+    .hero-stats .stat-item { flex: 1 1 40%; } /* Dois por linha no celular */
+
+    /* Carrossel Mobile */
+    .project-slide { width: 280px; }
+    .slide-content { padding: 15px; min-height: 160px; }
+    .slide-content h4 { font-size: 1rem; }
+
+    /* Depoimentos Mobile */
     .depoimentos-grid { display: flex; flex-direction: column; align-items: center; gap: 20px; }
+    .depoimentos-grid .card { width: 100%; max-width: 400px; }
+
+    /* Formulário Mobile */
+    .contact-glow-card { padding: 20px; }
+    .main-form input, .main-form textarea { padding: 12px; }
+    
+    /* Títulos Mobile */
+    .section-title, #portfolio h2, #depoimentos h2, #projects h2, #sobre-mim h2 {
+        font-size: 1.8rem;
+        margin-bottom: 30px;
+    }
 }
 
+/* FOOTER */
 footer { text-align: center; padding: 40px; opacity: 0.6; font-size: 0.8rem; border-top: 1px solid var(--border); }
