@@ -51,28 +51,21 @@ body { background-color: var(--dark-bg); color: #fff; font-family: 'Inter', sans
 
 .intro-text { margin-bottom: 25px; text-align: center; }
 .intro-title { display: block; font-size: 0.85rem; font-weight: 800; color: var(--primary); text-transform: uppercase; letter-spacing: 3px; margin-bottom: 8px; }
-/* Garante que o texto negritado seja branco por padrão */
+/* --- CORREÇÃO DE CORES NA FRASE HERO --- */
 .intro-desc strong {
-    color: #fff;
+    color: #fff; /* Inova fica branco */
     font-weight: 800;
 }
 
-/* Pinta APENAS o Flow de verde neon */
 .highlight-flow {
-    color: var(--primary);
+    color: var(--primary); /* Flow fica verde */
     font-weight: 800;
 }
 
-/* Mantém os termos de ação em verde para destaque total */
+/* Destaque para AUTOMAÇÃO e ESCALAR */
 .intro-desc strong:nth-of-type(2), 
 .intro-desc strong:nth-of-type(3) {
     color: var(--primary);
-}
-
-/* Garante que o negrito na frase também seja verde e forte */
-.intro-desc strong {
-    color: var(--primary);
-    font-weight: 800;
 }
 
 .foto-container { 
@@ -148,6 +141,64 @@ body { background-color: var(--dark-bg); color: #fff; font-family: 'Inter', sans
 .slide-content .ganho { color: var(--primary); font-size: 0.9rem; font-weight: 700; }
 
 @keyframes scroll-loop { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+/* --- ESTILO DO PORTFÓLIO (ICONS & LISTAS) --- */
+.portfolio-icon {
+    width: 35px;
+    height: 35px;
+    color: var(--primary);
+    margin-bottom: 20px;
+    filter: drop-shadow(0 0 5px rgba(0, 255, 153, 0.3));
+}
+
+.portfolio-grid .card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+    text-align: left;
+    padding: 35px;
+}
+
+.portfolio-grid .card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 15px;
+    color: var(--primary);
+}
+
+.portfolio-grid .card p {
+    font-size: 0.95rem;
+    opacity: 0.8;
+    margin-bottom: 20px;
+}
+
+.portfolio-grid .card ul {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+}
+
+.portfolio-grid .card li {
+    font-size: 0.85rem;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    color: #fff;
+}
+
+.portfolio-grid .card li::before {
+    content: "→";
+    color: var(--primary);
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.portfolio-grid .card li:last-child {
+    border-bottom: none;
+}
+
+
+
 
 /* ============================================================
    6. TESTIMONIAL ICONS (CENTRALIZADOS)
@@ -242,10 +293,26 @@ body { background-color: var(--dark-bg); color: #fff; font-family: 'Inter', sans
     /* Títulos e Depoimentos */
     .section-title, #portfolio h2, #depoimentos h2, #projects h2, #sobre-mim h2 { font-size: 1.8rem; }
     .depoimentos-grid { display: flex; flex-direction: column; align-items: center; gap: 20px; }
+
+   .portfolio-grid {
+        grid-template-columns: 1fr !important; /* Força 1 coluna no celular */
+        gap: 20px;
+    }
+
+    .portfolio-grid .card {
+        padding: 25px;
+        align-items: center; /* Opcional: centraliza o ícone e texto no celular */
+        text-align: center;
+    }
+    
+    .portfolio-grid .card li {
+        justify-content: center; /* Centraliza os bullets no celular */
+    }
     
 } /* Fim da Media Query */
 
 footer { text-align: center; padding: 40px; opacity: 0.6; font-size: 0.8rem; border-top: 1px solid var(--border); }
+
 
 
 
