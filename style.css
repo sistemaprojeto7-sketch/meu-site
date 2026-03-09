@@ -126,7 +126,7 @@ body { background-color: var(--dark-bg); color: #fff; font-family: 'Inter', sans
 }
 
 .carousel-wrapper { width: 100vw; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; overflow: hidden; padding: 40px 0; }
-.carousel-track { display: flex; width: max-content; gap: 30px; animation: scroll-loop 45s linear infinite; }
+.carousel-track { display: flex; width: max-content; gap: 30px; animation: scroll-loop 25s linear infinite; }
 .carousel-track:hover { animation-play-state: paused !important; cursor: pointer; }
 
 .project-slide { 
@@ -324,6 +324,7 @@ body { background-color: var(--dark-bg); color: #fff; font-family: 'Inter', sans
 } /* Fim da Media Query */
 
 footer { text-align: center; padding: 40px; opacity: 0.6; font-size: 0.8rem; border-top: 1px solid var(--border); }
+
 
 
 
