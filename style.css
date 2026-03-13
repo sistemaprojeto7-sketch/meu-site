@@ -32,25 +32,116 @@ body { background-color: var(--dark-bg); color: #fff; font-family: 'Inter', sans
 a { text-decoration: none !important; border: none !important; outline: none !important; }
 
 /* ============================================================
-   2. HEADER & LOGO AREA (CORRIGIDO LADO A LADO)
+   2. HEADER & LOGO AREA - VERSÃO HÍBRIDA (PC/APP-MOBILE)
    ============================================================ */
 .nav-header {
-    position: fixed; width: 100%; padding: 10px 0;
-    background: rgba(5, 5, 10, 0.95); backdrop-filter: blur(15px);
-    z-index: 1000; border-bottom: 1px solid var(--border);
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(5, 5, 10, 0.98);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    z-index: 999999;
+    border-bottom: 1px solid var(--border);
 }
-.nav-content { display: flex; justify-content: space-between; align-items: center; }
 
-.logo-area { display: flex; align-items: center; gap: 15px; }
-.logo-area img { height: 60px; width: auto; transition: 0.3s; }
-.brand-name { font-size: 1.5rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; color: #fff; }
-.brand-name span { color: var(--primary); }
+.nav-content {
+    width: 92%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+}
 
-.nav-links { display: flex; align-items: center; gap: 15px; }
-.nav-links a { text-decoration: none; color: #fff; font-size: 0.85rem; font-weight: 600; transition: 0.3s; }
-.nav-links a:hover { color: var(--primary); }
-.btn-nav { background: var(--primary); color: #000 !important; padding: 8px 16px; border-radius: 50px; font-weight: 800; box-shadow: 0 0 15px rgba(0, 255, 153, 0.3); }
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
 
+.logo-area img {
+    height: 50px;
+    width: auto;
+}
+
+.brand-name {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: #fff !important;
+    text-transform: uppercase;
+}
+
+.brand-name span { color: var(--primary) !important; }
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: #fff !important;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+/* ============================================================
+   AJUSTE ESTILO APP (CELULAR)
+   ============================================================ */
+@media (max-width: 900px) {
+    .nav-header {
+        position: relative !important; /* No celular ele flui com o topo */
+        padding: 20px 0;
+    }
+
+    .nav-content {
+        flex-direction: column; /* Empilha os blocos */
+        gap: 15px;
+    }
+
+    .logo-area {
+        flex-direction: column; /* Logo em cima, Nome embaixo */
+        gap: 8px;
+    }
+
+    .logo-area img {
+        height: 60px; /* Logo maior no celular */
+    }
+
+    .brand-name {
+        font-size: 1.5rem; /* Nome em destaque embaixo da logo */
+    }
+
+    .nav-links {
+        display: flex !important; /* Garante que apareça no celular */
+        flex-wrap: wrap; /* Permite quebrar linha se for muitos botões */
+        justify-content: center;
+        gap: 12px;
+        width: 100%;
+        padding-top: 10px;
+        border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .nav-links a {
+        font-size: 0.75rem; /* Botões menores para caberem lado a lado */
+        background: rgba(255,255,255,0.05);
+        padding: 8px 12px;
+        border-radius: 8px;
+        border: 1px solid rgba(0, 255, 153, 0.2);
+    }
+
+    .btn-nav {
+        width: 100%; /* Botão de contato vira uma barra larga */
+        text-align: center;
+        margin-left: 0 !important;
+    }
+
+    /* Ajusta o topo do site para não ficar um buraco */
+    main { padding-top: 20px !important; }
+}
 /* ============================================================
    3. HERO & NOVA FOTO SIMPLIFICADA
    ============================================================ */
