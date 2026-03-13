@@ -9,6 +9,12 @@
     --border: rgba(0, 255, 153, 0.2);
 }
 
+body {
+    overflow-x: hidden; /* Impede que o site "dance" para os lados no celular */
+    width: 100%;
+    position: relative;
+}
+
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body { background-color: var(--dark-bg); color: #fff; font-family: 'Inter', sans-serif; line-height: 1.6; overflow-x: hidden; }
@@ -24,7 +30,7 @@ body { background-color: var(--dark-bg); color: #fff; font-family: 'Inter', sans
 .highlight { color: var(--primary); font-weight: 800; }
 
 /* ============================================================
-   2. HEADER & LOGO AREA (CORRIGIDO LADO A LADO)
+   2. HEADER & LOGO AREA
    ============================================================ */
 .nav-header {
     position: fixed; width: 100%; padding: 10px 0;
@@ -32,241 +38,397 @@ body { background-color: var(--dark-bg); color: #fff; font-family: 'Inter', sans
     z-index: 1000; border-bottom: 1px solid var(--border);
 }
 .nav-content { display: flex; justify-content: space-between; align-items: center; }
-
 .logo-area { display: flex; align-items: center; gap: 15px; }
-.logo-area img { height: 60px; width: auto; transition: 0.3s; }
+.logo-area img { height: 60px; width: auto; }
 .brand-name { font-size: 1.5rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; color: #fff; }
 .brand-name span { color: var(--primary); }
-
 .nav-links { display: flex; align-items: center; gap: 15px; }
 .nav-links a { text-decoration: none; color: #fff; font-size: 0.85rem; font-weight: 600; transition: 0.3s; }
 .nav-links a:hover { color: var(--primary); }
 .btn-nav { background: var(--primary); color: #000 !important; padding: 8px 16px; border-radius: 50px; font-weight: 800; box-shadow: 0 0 15px rgba(0, 255, 153, 0.3); }
 
 /* ============================================================
-   3. HERO & COMPOSIÇÃO DE FOTO (MOLDURA FUTURISTA)
+   3. HERO & NOVA FOTO SIMPLIFICADA
    ============================================================ */
 .hero { padding-top: 160px; }
 .hero-grid { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 40px; align-items: center; }
 
-.intro-text { 
-    margin-bottom: 25px; 
-    display: flex; 
-    flex-direction: column; 
-    align-items: center; 
-    text-align: center;
-}
+.intro-text { margin-bottom: 25px; display: flex; flex-direction: column; align-items: center; text-align: center; }
 .intro-title { 
-    display: inline-block; 
-    font-size: 1.1rem; 
-    font-weight: 800; 
-    color: var(--primary); 
-    text-transform: uppercase; 
-    letter-spacing: 2px; 
-    margin-bottom: 15px; 
-    border-left: 4px solid var(--primary); 
-    padding-left: 12px; 
-    text-shadow: 0 0 10px rgba(0, 255, 153, 0.3); 
+    display: inline-block; font-size: 1.1rem; font-weight: 800; color: var(--primary); 
+    text-transform: uppercase; letter-spacing: 2px; margin-bottom: 15px; 
+    border-left: 4px solid var(--primary); padding-left: 12px;
+    text-shadow: 0 0 10px rgba(0, 255, 153, 0.3);
 }
-/* --- CORREÇÃO DE CORES NA FRASE HERO --- */
-.intro-desc strong {
-    color: #fff; /* Inova fica branco */
+
+.highlight-flow { color: var(--primary); font-weight: 800; }
+
+
+/* FOTO SIMPLIFICADA PROFISSIONAL */
+.foto-container-simples { text-align: center; margin: 20px auto; }
+.foto-perfil {
+    width: 180px; height: 180px; border-radius: 50%;
+    border: 3px solid var(--primary); object-fit: cover;
+    box-shadow: 0 0 30px rgba(0, 255, 153, 0.2); margin-bottom: 15px;
+}
+/* Garante que a foto e o texto se comportem bem */
+.about-grid {
+    display: grid;
+    grid-template-columns: 250px 1fr; /* Foto menor e texto maior */
+    gap: 40px;
+    align-items: start;
+}
+.nome { font-size: 1.8rem; font-weight: 800; }
+.cargo { color: #ccc; font-size: 0.9rem; margin-bottom: 15px; }
+
+.btn-ln-glow {
+    display: inline-block; padding: 10px 20px; border-radius: 8px;
+    background: rgba(15, 25, 30, 0.88); border: 2px solid var(--primary);
+    color: var(--primary); font-weight: bold; text-decoration: none; transition: 0.3s;
+}
+.btn-ln-glow:hover { background: var(--primary); color: #000; box-shadow: 0 0 20px var(--primary); }
+
+.hero-right h1 { font-size: 3rem; line-height: 1.1; margin: 15px 0; }
+.hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+    border-top: 1px solid var(--border);
+    padding-top: 30px;
+    flex-wrap: wrap; /* Permite quebrar linha se não couber */
+}
+
+.stat-item {
+    text-align: center;
+    min-width: 100px;
+}
+
+.stat-item strong {
+    display: block;
+    font-size: 2rem;
+    color: var(--primary);
+    line-height: 1;
+    margin-bottom: 5px;
+    text-shadow: 0 0 10px rgba(0, 255, 153, 0.3);
+}
+
+.stat-item span {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.8;
+}
+
+
+/* --- Ajustes Perfil Eduardo (Versão Clean) --- */
+.about-card-featured {
+    background: rgba(15, 25, 30, 0.7) !important;
+    border: 1px solid rgba(0, 255, 153, 0.1) !important;
+    backdrop-filter: blur(20px);
+    padding: 40px;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 250px 1fr; 
+    gap: 40px;
+    align-items: center;
+}
+
+/* Garante a identidade visual da marca em qualquer título */
+.brand-white {
+    color: #ffffff !important;
     font-weight: 800;
 }
 
 .highlight-flow {
-    color: var(--primary); /* Flow fica verde */
+    color: var(--primary) !important;
     font-weight: 800;
 }
 
-/* Destaque para AUTOMAÇÃO e ESCALAR */
-.intro-desc strong:nth-of-type(2), 
-.intro-desc strong:nth-of-type(3) {
+@media (max-width: 900px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+}
+
+.photo-frame {
+    position: relative;
+    display: inline-block;
+    width: 250px; 
+    height: 250px;
+}
+
+.profile-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    border: 2px solid var(--primary);
+    padding: 5px;
+    background: var(--dark-bg);
+    object-fit: cover;
+    aspect-ratio: 1 / 1;
+}
+
+.profile-name { font-size: 1.8rem; color: #fff; margin-bottom: 5px; }
+.profile-sub { color: var(--primary); font-size: 0.85rem; letter-spacing: 1px; margin-bottom: 20px; opacity: 0.8; }
+
+.eyebrow { color: var(--primary); font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 3px; display: block; margin-bottom: 10px; }
+
+/* Tags de Habilidades */
+.skills-container { margin-top: 30px; display: grid; gap: 20px; }
+.skill-group span { font-size: 0.7rem; color: rgba(255,255,255,0.7); font-weight: 800; margin-bottom: 10px; display: block; }
+.skill-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+
+.tag-pill {
+    background: rgba(0, 255, 153, 0.05);
+    border: 1px solid rgba(0, 255, 153, 0.2);
     color: var(--primary);
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 600;
 }
 
-.foto-container { 
-    position: relative; width: 350px; height: 350px; margin: 0 auto 20px; 
-    display: flex; align-items: center; justify-content: center;
+.tag-pill-alt {
+    background: rgba(108, 76, 255, 0.1);
+    border: 1px solid rgba(108, 76, 255, 0.3);
+    color: #a38fff;
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 600;
 }
-.foto-bg-futuristic {
-    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-    border-radius: 30px; overflow: hidden; z-index: 1; opacity: 0.6; filter: blur(1px);
-    border: 1px solid var(--primary);
-}
-.foto-bg-futuristic img { width: 100%; height: 100%; object-fit: cover; }
-
-.foto-wrapper {
-    position: relative; 
-    width: 75%; height: 75%; /* Revela bem o fundo futurista */
-    border-radius: 20px; overflow: hidden; z-index: 2; border: 3px solid var(--primary);
-    box-shadow: 0 0 40px rgba(0, 255, 153, 0.25);
-}
-.foto { width: 100%; height: 100%; object-fit: cover; }
-
-.nome { font-size: 1.8rem; font-weight: 800; }
-.cargo { color: #ccc; font-weight: 400; margin-bottom: 10px; }
-.tagline { opacity: 0.8; font-size: 1rem; margin-bottom: 20px; }
-
-/* ESPAÇAMENTO DOS PARÁGRAFOS NA HERO */
-.hero-description p { margin-bottom: 20px; }
-.hero-description p:last-child { margin-bottom: 0; }
 
 .btn-ln-glow {
-    display: inline-block; padding: 12px 24px; border-radius: 10px;
-    background: rgba(15, 25, 30, 0.88); border: 2px solid var(--primary);
-    color: var(--primary); font-weight: bold; text-decoration: none; transition: 0.3s;
-}
-.btn-ln-glow:hover { background: var(--primary); color: #000; box-shadow: 0 0 30px var(--primary); }
-
-.hero-right h1 { font-size: 3rem; line-height: 1.1; margin: 15px 0; }
-.hero-stats { display: flex; gap: 20px; margin-top: 25px; }
-.stat-item strong { display: block; font-size: 1.4rem; color: var(--primary); }
-
-/* ============================================================
-   4. SOBRE MIM & CARDS (COM HOVER)
-   ============================================================ */
-.about-card-featured { border-left: 5px solid var(--primary); }
-.about-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 40px; }
-.skill-pill { background: rgba(255, 255, 255, 0.05); padding: 15px; border-radius: 12px; margin-bottom: 10px; border: 1px solid var(--border); font-size: 0.9rem; }
-
-.card { background: var(--glass); border: 1px solid var(--border); padding: 25px; border-radius: 15px; transition: 0.4s; }
-.card:hover { transform: translateY(-10px); border-color: var(--primary); box-shadow: 0 15px 35px rgba(0, 255, 153, 0.15); background: rgba(0, 255, 153, 0.05); }
-
-/* ============================================================
-   5. TITULOS & CARROSSEL (ESTRUTURA LADO A LADO)
-   ============================================================ */
-.section-title, #portfolio h2, #depoimentos h2, #projects h2, #sobre-mim h2 {
-    font-size: 2.5rem; color: var(--primary) !important; text-align: center !important;
-    margin: 0 auto 40px; width: 100%; font-weight: 800; text-transform: uppercase;
-    letter-spacing: 2px; text-shadow: 0 0 20px rgba(0, 255, 153, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    margin-top: 10px;
 }
 
-.carousel-wrapper { width: 100vw; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; overflow: hidden; padding: 40px 0; }
-.carousel-track { 
-    display: flex; 
-    width: max-content; 
-    gap: 30px; 
-    animation: scroll-loop 20s linear infinite; 
-}
-.carousel-track:hover { animation-play-state: paused !important; cursor: pointer; }
-
-.project-slide { 
-    width: 340px; flex-shrink: 0; background: var(--glass); border-radius: 20px; 
-    overflow: hidden; border: 1px solid var(--border); display: flex; flex-direction: column; transition: 0.4s; 
-}
-.project-slide:hover { border-color: var(--primary); transform: scale(1.02); }
-.project-slide img { width: 100%; height: 200px; object-fit: cover; border-bottom: 2px solid var(--primary); }
-.slide-content { padding: 25px; display: flex; flex-direction: column; flex-grow: 1; min-height: 180px; }
-.slide-content h4 { color: var(--primary); margin-bottom: 12px; font-size: 1.1rem; font-weight: 800; height: 2.4em; display: flex; align-items: center; }
-.slide-content .dor { color: #ff6b6b; font-size: 0.9rem; margin-bottom: 12px; font-weight: 600; }
-.slide-content .ganho { color: var(--primary); font-size: 0.9rem; font-weight: 700; }
-
-@keyframes scroll-loop { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
 /* --- ESTILO DO PORTFÓLIO (ICONS & LISTAS) --- */
+.portfolio-grid .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* ALTERADO: de flex-start para center */
+    text-align: center;  /* ALTERADO: de left para center */
+    padding: 35px;
+    height: 100%;
+}
+
+/* Centraliza o ícone especificamente */
 .portfolio-icon {
     width: 35px;
     height: 35px;
     color: var(--primary);
     margin-bottom: 20px;
     filter: drop-shadow(0 0 5px rgba(0, 255, 153, 0.3));
+    margin-left: auto;   /* ADICIONADO: garante centralização */
+    margin-right: auto;  /* ADICIONADO: garante centralização */
 }
 
-.portfolio-grid {
-    display: grid;
-    /* Isso faz os cards se ajustarem sozinhos e ficarem centralizados se sobrar espaço */
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
-    gap: 30px;
-    justify-content: center; 
+/* Ajusta a lista para não ficar estranha centralizada */
+.portfolio-grid .card li {
+    justify-content: center; /* ADICIONADO: centraliza o texto da lista */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.portfolio-grid .card {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start; /* No PC, o conteúdo (ícone/texto) fica à esquerda */
-    text-align: left;
-    padding: 35px;
-    height: 100%; /* Garante que todos os cards tenham a mesma altura na linha */
+
+/* ============================================================
+   4. SEÇÃO AI-FLOW (A LINHA QUE CRESCE)
+   ============================================================ */
+.ai-flow { padding: 100px 0; position: relative; }
+.flow-title { text-align: center; font-size: 2.5rem; color: var(--primary); margin-bottom: 80px; text-transform: uppercase; font-weight: 800; }
+
+.flow-container { position: relative; max-width: 1100px; margin: auto; }
+
+/* Linha central que o JS vai animar */
+.flow-line {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 4px;
+    height: 0; /* O JS controla a altura */
+    background: var(--primary); /* Verde Neon */
+    box-shadow: 0 0 15px var(--primary);
+    transform: translateX(-50%);
+    z-index: 1;
+
 }
 
-.portfolio-grid .card h3 {
-    font-size: 1.25rem;
-    margin-bottom: 15px;
-    color: var(--primary);
+.flow-step { position: relative; width: 50%; margin-bottom: 60px; opacity: 0; transform: translateY(60px); transition: 0.8s ease; z-index: 2; }
+.flow-step.show { opacity: 1; transform: translateY(0); }
+
+.flow-step:nth-child(odd) { left: 0; text-align: right; padding-right: 60px; }
+.flow-step:nth-child(even) { left: 50%; text-align: left; padding-left: 60px; }
+
+.flow-card {
+    display: inline-block; background: var(--glass); backdrop-filter: blur(10px);
+    border: 1px solid var(--border); padding: 30px; border-radius: 14px;
+    max-width: 380px; position: relative; transition: 0.4s;
+}
+.flow-card:hover { transform: translateY(-8px); border-color: var(--primary); box-shadow: 0 0 20px rgba(0, 255, 153, 0.2); }
+
+.flow-number {
+    position: absolute; top: -14px; background: var(--primary); color: #000;
+    font-weight: bold; padding: 5px 12px; border-radius: 6px; font-size: 14px;
+}
+.flow-step:nth-child(odd) .flow-number { right: 20px; }
+.flow-step:nth-child(even) .flow-number { left: 20px; }
+
+/* Bolinha na linha */
+.flow-step::after {
+    content: ""; position: absolute; top: 15px; width: 16px; height: 16px;
+    background: var(--primary); border-radius: 50%; box-shadow: 0 0 10px var(--primary); z-index: 3;
+}
+.flow-step:nth-child(odd)::after { right: -8px; }
+.flow-step:nth-child(even)::after { left: -8px; }
+
+/* ============================================================
+   5. PORTFÓLIO, CARROSSEL E SOBRE (ORIGINAL MANTIDO)
+   ============================================================ */
+.section-title, #portfolio h2, #depoimentos h2, #projects h2, #sobre-mim h2 {
+    font-size: 2.5rem; color: var(--primary) !important; text-align: center !important;
+    margin: 0 auto 40px; font-weight: 800; text-transform: uppercase;
+    text-shadow: 0 0 20px rgba(0, 255, 153, 0.3);
 }
 
-.portfolio-grid .card p {
-    font-size: 0.95rem;
-    opacity: 0.8;
-    margin-bottom: 20px;
-}
+.card { background: var(--glass); border: 1px solid var(--border); padding: 25px; border-radius: 15px; transition: 0.4s; }
 
-.portfolio-grid .card ul {
+/* Restaurando os Ícones Verdes Pequenos das Listas */
+.card ul {
     list-style: none;
     padding: 0;
-    width: 100%;
+    margin-top: 15px;
 }
 
-.portfolio-grid .card li {
-    font-size: 0.85rem;
-    padding: 8px 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+.card li {
+    font-size: 0.85rem; /* Voltando para o tamanho pequeno */
+    padding: 6px 0;
     display: flex;
     align-items: center;
     color: #fff;
 }
 
-.portfolio-grid .card li::before {
-    content: "→";
+.card li::before {
+    content: "→"; /* Ícone simples e verde */
     color: var(--primary);
     margin-right: 10px;
     font-weight: bold;
 }
+.card:hover { transform: translateY(-10px); border-color: var(--primary); background: rgba(0, 255, 153, 0.05); }
 
-.portfolio-grid .card li:last-child {
-    border-bottom: none;
-}
-
-
-
+.portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; justify-content: center; }
+.portfolio-grid .card { display: flex; flex-direction: column; align-items: flex-start; text-align: left; padding: 35px; height: 100%; }
 
 /* ============================================================
-   6. TESTIMONIAL ICONS (CENTRALIZADOS)
+   AJUSTE CARROSSEL - IMAGENS E CORES
    ============================================================ */
-.testimonial-icon { width: 28px; height: 28px; margin: 0 auto 20px auto; display: flex; align-items: center; justify-content: center; color: var(--primary); cursor: pointer; transition: 0.3s; }
-.depoimentos-grid .card { display: flex; flex-direction: column; align-items: center; text-align: center; }
-.testimonial-icon svg { width: 100%; height: 100%; stroke-width: 2.5px; }
-.testimonial-icon:active { transform: scale(0.9); color: #fff; }
-
-/* ============================================================
-   7. CONTATO, FORMULÁRIO E E-MAIL (RESTAURADOS)
-   ============================================================ */
-.contact-glow-card { background: rgba(30, 45, 60, 0.9); border: 2px solid var(--primary); box-shadow: 0 0 40px rgba(0, 255, 153, 0.1); }
-.main-form { display: flex; flex-direction: column; gap: 15px; }
-.main-form input, .main-form textarea {
-    background: rgba(255, 255, 255, 0.05); border: 1px solid var(--border);
-    padding: 15px; border-radius: 10px; color: #fff; font-family: 'Inter', sans-serif;
+.carousel-wrapper { 
+    width: 100%; 
+    overflow: hidden; 
+    padding: 40px 0; 
+    position: relative;
 }
-.main-form button { background: var(--primary); color: #000; border: none; padding: 18px; border-radius: 10px; font-weight: 800; cursor: pointer; transition: 0.3s; }
-.main-form button:hover { box-shadow: 0 0 20px var(--primary); transform: scale(1.02); }
 
-/* E-MAIL VERDE ETERNO (MATADOR DE ROXO) */
-.btn-email-pulse, .btn-email-pulse:visited, .btn-email-pulse:active {
-    display: inline-block; padding: 10px 20px;
-    border: 2px solid var(--primary);
-    color: var(--primary) !important;
-    background: rgba(0, 255, 153, 0.05);
-    font-weight: bold; text-decoration: none; border-radius: 50px;
+.carousel-track { 
+    display: flex; 
+    width: max-content; 
+    gap: 30px; 
+    animation: scroll-loop 40s linear infinite; 
+}
+
+.carousel-track:hover { animation-play-state: paused; }
+
+.project-slide {
+    width: 350px; 
+    flex-shrink: 0;
+    background: var(--glass);
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    overflow: hidden;
     transition: 0.3s;
+}
+
+/* Tamanho das imagens controlado aqui */
+.project-slide img {
+    width: 100%;
+    height: 180px; /* Altura fixa para não ficar gigante no notebook */
+    object-fit: cover;
+    border-bottom: 1px solid var(--border);
+}
+
+.slide-content { padding: 20px; }
+.slide-content h4 { color: var(--primary); margin-bottom: 10px; font-size: 1.2rem; }
+
+/* VOLTANDO AS CORES: Vermelho para o problema e Verde para o ganho */
+.slide-content .dor { 
+    color: #ff4d4d; /* Vermelho vibrante */
+    font-size: 0.9rem; 
+    margin-bottom: 8px;
+    display: block;
+}
+
+.slide-content .ganho { 
+    color: var(--primary); /* Verde neon */
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+@keyframes scroll-loop { 
+    0% { transform: translateX(0); } 
+    100% { transform: translateX(-50%); } 
+}
+
+@keyframes scroll-loop { 
+    0% { transform: translateX(0); } 
+    /* Move exatamente a metade da largura total (que são os primeiros 8 itens) */
+    100% { transform: translateX(-50%); } 
+}
+
+.project-slide {
+    width: 350px; /* Largura fixa para garantir que o cálculo do track não quebre */
+    flex-shrink: 0;
+}
+
+@keyframes scroll-loop { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+/* ============================================================
+   6. DEPOIMENTOS E FORMULÁRIO
+   ============================================================ */
+.contact-glow-card { background: rgba(30, 45, 60, 0.9); border: 2px solid var(--primary); }
+.main-form { display: flex; flex-direction: column; gap: 15px; }
+.main-form input, .main-form textarea { background: rgba(255, 255, 255, 0.05); border: 1px solid var(--border); padding: 15px; border-radius: 10px; color: #fff; }
+.main-form button { background: var(--primary); color: #000; border: none; padding: 18px; border-radius: 10px; font-weight: 800; cursor: pointer; transition: 0.3s; }
+
+.btn-email-pulse {
+    display: inline-block; padding: 10px 20px; border: 2px solid var(--primary);
+    color: var(--primary) !important; font-weight: bold; text-decoration: none; border-radius: 50px;
     animation: email-pulse 2s infinite;
 }
-.btn-email-pulse:hover {
-    background: var(--primary);
-    color: #000 !important;
-    box-shadow: 0 0 30px var(--primary);
-    animation: none;
+
+.testimonial-icon { 
+    width: 32px;      /* Tamanho pequeno e elegante */
+    height: 32px; 
+    margin: 0 auto 20px auto; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    color: var(--primary); 
 }
+
+.testimonial-icon svg { 
+    width: 100%; 
+    height: 100%; 
+    stroke-width: 2px; 
+}
+
 @keyframes email-pulse {
     0% { box-shadow: 0 0 0 0 rgba(0, 255, 153, 0.4); }
     70% { box-shadow: 0 0 0 10px rgba(0, 255, 153, 0); }
@@ -274,84 +436,208 @@ body { background-color: var(--dark-bg); color: #fff; font-family: 'Inter', sans
 }
 
 /* ============================================================
-   8. RESPONSIVIDADE TOTAL (NOTEBOOK, TABLET, CELULAR)
+   7. RESPONSIVIDADE (MOBILE AJUSTADO)
    ============================================================ */
 @media (max-width: 900px) {
-    /* Menu e Header */
-    .nav-content { flex-direction: column; gap: 15px; text-align: center; }
-    .logo-area { gap: 10px; justify-content: center; }
-    .logo-area img { height: 50px; }
-    .brand-name { font-size: 1.2rem; }
-    .nav-links { gap: 8px; flex-wrap: wrap; justify-content: center; }
-    .nav-links a { font-size: 0.75rem; padding: 5px; }
-
-    /* Hero e Foto */
-    .hero { padding-top: 200px; }
     .hero-grid { grid-template-columns: 1fr; text-align: center; }
-    .foto-container { width: 300px; height: 300px; max-width: 90%; }
-    .foto-wrapper { width: 75%; height: 75%; }
-    .hero-right h1 { font-size: 2rem; }
+    .hero { padding-top: 120px; }
+    
+    .hero-stats { justify-content: center; }
 
-    /* Estatísticas LADO A LADO no Celular */
+    /* FLUXO MOBILE */
+    .flow-line { left: 20px; transform: none; }
+    .flow-step { width: 100%; padding-left: 60px !important; padding-right: 0 !important; text-align: left !important; }
+    .flow-step:nth-child(even) { left: 0; }
+    .flow-step::after { left: 13px !important; }
+    .flow-step:nth-child(odd) .flow-number { left: 20px; right: auto; }
+
+    .nav-links { display: none; } /* Opcional: esconder menu longo no mobile */
+    .portfolio-grid { grid-template-columns: 1fr !important; justify-items: center; }
+}
+@media (max-width: 900px) {
+    .about-grid {
+        grid-template-columns: 1fr !important;
+        text-align: center;
+    }
+    
+    .about-left {
+        max-width: 200px;
+        margin: 0 auto 30px;
+    }
+    
+    .about-right h2 {
+        text-align: center !important;
+    }
+}
+/* 1. Ajuste para Telas Gigantes (TVs) */
+@media (min-width: 2000px) {
+    html { font-size: 18px; } /* Aumenta a base da fonte para não ficar minúscula na TV */
+    .container { max-width: 1400px; }
+}
+
+/* 2. Ajuste para Tablets (iPad/Galaxy Tab) */
+@media (max-width: 1100px) {
+    .hero-grid, .about-grid {
+        gap: 20px;
+    }
+    h1 { font-size: 2.5rem !important; }
+}
+
+/* 3. Correção Crítica para Celulares Pequenos */
+@media (max-width: 480px) {
+    .intro-title { font-size: 0.9rem; }
+    .main-headline { font-size: 2rem !important; }
     .hero-stats {
-        display: flex; 
-        flex-direction: row; /* Força ficar um ao lado do outro */
-        justify-content: center; 
-        gap: 15px; /* Espaço reduzido para caber na tela */
-        margin-top: 25px;
+        flex-direction: column; /* Estatísticas uma embaixo da outra no celular */
+        align-items: center;
+    }
+    .stat-item { width: 100%; border-bottom: 1px solid var(--border); padding-bottom: 10px; }
+    
+    /* Garante que o carrossel não quebre o scroll lateral do site */
+    .carousel-wrapper { padding: 20px 0; }
+    .project-slide { width: 280px; } 
+}
+
+/* ============================================================
+   HERO STATS - AJUSTE UNIVERSAL
+   ============================================================ */
+.hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+    border-top: 1px solid var(--border);
+    padding-top: 30px;
+    flex-wrap: wrap; /* Permite quebrar linha se não couber */
+}
+
+.stat-item {
+    text-align: center;
+    min-width: 100px;
+}
+
+.stat-item strong {
+    display: block;
+    font-size: 2rem;
+    color: var(--primary);
+    line-height: 1;
+    margin-bottom: 5px;
+    text-shadow: 0 0 10px rgba(0, 255, 153, 0.3);
+}
+
+.stat-item span {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.8;
+}
+
+/* Ajuste específico para Celulares (Telas abaixo de 600px) */
+@media (max-width: 600px) {
+    .hero-stats {
+        gap: 15px;
+        flex-direction: column; /* Empilha um embaixo do outro */
+        align-items: center;
     }
 
     .stat-item {
-        flex: 1; /* Divide o espaço igualmente entre os 3 */
-        border-top: none !important; /* Remove qualquer divisória que tenha sobrado */
-        padding-top: 0 !important;
+        width: 100%;
+        padding: 15px 0;
+        border-bottom: 1px solid rgba(0, 255, 153, 0.1);
     }
 
-    .stat-item strong { 
-        font-size: 1.3rem; /* Tamanho ajustado para não quebrar linha no celular */
-        display: block;
-    }
-
-    .stat-item span { 
-        font-size: 0.7rem; /* Texto menor para manter a elegância */
-        white-space: nowrap; /* Impede que a palavra "Eficiência" quebre em duas */
-    }
-
-    /* Grids e Carrossel */
-    .about-grid { grid-template-columns: 1fr; }
-    .project-slide { width: 280px; }
-    
-    /* Títulos e Depoimentos */
-    .section-title, #portfolio h2, #depoimentos h2, #projects h2, #sobre-mim h2 { font-size: 1.8rem; }
-    .depoimentos-grid { display: flex; flex-direction: column; align-items: center; gap: 20px; }
-
-   .portfolio-grid {
-        grid-template-columns: 1fr !important; 
-        justify-items: center; 
-    }
-    .portfolio-grid .card {
-        align-items: center; 
-        text-align: center;
-        max-width: 400px;
-        margin: 0 auto;
-    }
-    .portfolio-grid .card li {
-        justify-content: center; 
+    .stat-item:last-child {
+        border-bottom: none;
     }
     
-    .portfolio-grid .card li {
-        justify-content: center; /* Centraliza os bullets no celular */
+    .stat-item strong {
+        font-size: 2.5rem; /* Aumenta o número para destaque no celular */
     }
-    
-} /* Fim da Media Query */
+}
+
+/* 4. Melhoria de Leitura em Notebooks (13 e 15 polegadas) */
+p {
+    font-size: clamp(0.95rem, 1vw, 1.1rem);
+    line-height: 1.6;
+}
+
+
+/* ============================================================
+   BOTÃO FLUTUANTE (STICKY CTA)
+   ============================================================ */
+.sticky-contact {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 9999;
+}
+
+.btn-floating {
+    background: var(--primary);
+    color: #000 !important;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 0.8rem;
+    padding: 12px 24px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 10px 30px rgba(0, 255, 153, 0.4);
+    transition: all 0.3s ease;
+    letter-spacing: 1px;
+}
+
+.btn-floating:hover {
+    transform: scale(1.05) translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 255, 153, 0.6);
+}
+
+/* Efeito de Pulso no Ícone */
+.pulse-icon {
+    width: 10px;
+    height: 10px;
+    background: #000;
+    border-radius: 50%;
+    position: relative;
+}
+
+.pulse-icon::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: #000;
+    border-radius: 50%;
+    animation: pulse-ring 1.5s infinite;
+}
+
+@keyframes pulse-ring {
+    0% { transform: scale(1); opacity: 0.7; }
+    100% { transform: scale(3); opacity: 0; }
+}
+
+/* Ajuste para Celular: Centralizar ou diminuir */
+@media (max-width: 600px) {
+    .sticky-contact {
+        bottom: 20px;
+        right: 20px;
+        left: 20px; /* Faz ele ficar largo no celular para facilitar o clique */
+    }
+    .btn-floating {
+        justify-content: center;
+        font-size: 0.75rem;
+    }
+}
+
+#msg-sucesso {
+    background: rgba(0, 255, 153, 0.1);
+    border: 2px solid var(--primary);
+    padding: 30px;
+    border-radius: 15px;
+    color: #fff;
+    font-weight: 600;
+    line-height: 1.6;
+    box-shadow: 0 0 30px rgba(0, 255, 153, 0.2);
+}
 
 footer { text-align: center; padding: 40px; opacity: 0.6; font-size: 0.8rem; border-top: 1px solid var(--border); }
-
-
-
-
-
-
-
-
-
