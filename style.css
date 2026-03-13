@@ -32,144 +32,138 @@ body { background-color: var(--dark-bg); color: #fff; font-family: 'Inter', sans
 a { text-decoration: none !important; border: none !important; outline: none !important; }
 
 /* ============================================================
-   2. HEADER & LOGO AREA - FIXO ESTILO APP
+   2. HEADER & LOGO AREA (FIXO E RESPONSIVO)
    ============================================================ */
 .nav-header {
-    position: fixed !important; /* MANTÉM FIXO SEMPRE */
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    background: rgba(5, 5, 10, 0.98);
+    padding: 10px 0;
+    background: rgba(5, 5, 10, 0.95);
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
-    z-index: 999999;
+    z-index: 10000; /* Garante que fique acima de tudo */
     border-bottom: 1px solid var(--border);
 }
 
 .nav-content {
+    display: flex;
+    justify-content: space-between; /* Logo na esquerda, Links na direita */
+    align-items: center;
     width: 92%;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: auto;
+}
+
+.logo-area {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 10px 0;
+    gap: 15px;
 }
 
-/* --- AJUSTE PARA O MODO APP NO CELULAR --- */
-@media (max-width: 900px) {
-    .nav-header {
-        /* Removemos o 'relative' e mantemos o 'fixed' do topo */
-        padding: 10px 0;
-    }
-
-    .nav-content {
-        flex-direction: column; /* Empilha: Logo > Nome > Botões */
-        gap: 10px;
-    }
-
-    .logo-area {
-        flex-direction: column;
-        gap: 5px;
-    }
-
-    .logo-area img {
-        height: 45px; /* Tamanho ajustado para não ocupar a tela toda */
-    }
-
-    .brand-name {
-        font-size: 1.1rem;
-    }
-
-    .nav-links {
-        display: flex !important;
-        flex-wrap: wrap; 
-        justify-content: center;
-        gap: 8px;
-        width: 100%;
-        padding-top: 8px;
-        border-top: 1px solid rgba(255,255,255,0.1);
-    }
-
-    .nav-links a {
-        font-size: 0.7rem;
-        background: rgba(0, 255, 153, 0.05);
-        padding: 6px 10px;
-        border-radius: 6px;
-        border: 1px solid rgba(0, 255, 153, 0.2);
-        white-space: nowrap;
-    }
-
-    .btn-nav {
-        background: var(--primary) !important;
-        color: #000 !important;
-        padding: 6px 12px !important;
-        width: auto !important; /* Mantém como botão na linha se couber */
-    }
-
-    /* ESSENCIAL: Empurra o site para baixo para o menu fixo não cobrir o Hero */
-    main { 
-        padding-top: 180px !important; 
-    }
+.logo-area img {
+    height: 60px; /* Tamanho original que você gostava */
+    width: auto;
 }
 
-/* Ajuste para Desktop (Notebook) */
-@media (min-width: 901px) {
-    main { padding-top: 100px; }
+.brand-name {
+    font-size: 1.5rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #fff;
 }
+
+.brand-name span {
+    color: var(--primary); /* FLOW VERDE */
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: 0.3s;
+    white-space: nowrap;
+}
+
+.nav-links a:hover {
+    color: var(--primary);
+}
+
+.btn-nav {
+    background: var(--primary);
+    color: #000 !important;
+    padding: 8px 18px;
+    border-radius: 50px;
+    font-weight: 800;
+    box-shadow: 0 0 15px rgba(0, 255, 153, 0.3);
+}
+
 /* ============================================================
-   AJUSTE ESTILO APP (CELULAR)
+   VISÃO APP NO CELULAR (CENTRALIZADO E EMPILHADO)
    ============================================================ */
 @media (max-width: 900px) {
     .nav-header {
-        position: relative !important; /* No celular ele flui com o topo */
-        padding: 20px 0;
+        padding: 15px 0;
     }
 
     .nav-content {
-        flex-direction: column; /* Empilha os blocos */
+        flex-direction: column; /* Empilha: Logo > Botões */
         gap: 15px;
     }
 
     .logo-area {
-        flex-direction: column; /* Logo em cima, Nome embaixo */
-        gap: 8px;
+        flex-direction: column; /* Logo em cima, Nome embaixo no mobile */
+        gap: 5px;
     }
 
     .logo-area img {
-        height: 60px; /* Logo maior no celular */
+        height: 50px;
     }
 
     .brand-name {
-        font-size: 1.5rem; /* Nome em destaque embaixo da logo */
+        font-size: 1.2rem;
     }
 
     .nav-links {
-        display: flex !important; /* Garante que apareça no celular */
-        flex-wrap: wrap; /* Permite quebrar linha se for muitos botões */
-        justify-content: center;
-        gap: 12px;
         width: 100%;
-        padding-top: 10px;
-        border-top: 1px solid rgba(255,255,255,0.1);
+        justify-content: center;
+        gap: 10px;
+        flex-wrap: wrap; /* Para os botões não saírem da tela */
     }
 
     .nav-links a {
-        font-size: 0.75rem; /* Botões menores para caberem lado a lado */
-        background: rgba(255,255,255,0.05);
-        padding: 8px 12px;
-        border-radius: 8px;
-        border: 1px solid rgba(0, 255, 153, 0.2);
+        font-size: 0.75rem;
+        padding: 6px 10px;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 6px;
+        border: 1px solid var(--border);
     }
 
     .btn-nav {
-        width: 100%; /* Botão de contato vira uma barra larga */
-        text-align: center;
-        margin-left: 0 !important;
+        background: var(--primary) !important;
+        border: none;
     }
 
-    /* Ajusta o topo do site para não ficar um buraco */
-    main { padding-top: 20px !important; }
+    /* Empurra o site para baixo no mobile para o menu não cobrir a foto */
+    main {
+        padding-top: 180px !important;
+    }
+}
+
+/* Ajuste Desktop para não cobrir o topo */
+@media (min-width: 901px) {
+    main {
+        padding-top: 100px;
+    }
 }
 /* ============================================================
    3. HERO & NOVA FOTO SIMPLIFICADA
