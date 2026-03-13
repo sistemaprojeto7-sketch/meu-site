@@ -108,54 +108,53 @@ a { text-decoration: none !important; border: none !important; outline: none !im
 }
 
 /* ============================================================
-   VISÃO APP NO CELULAR (CENTRALIZADO E EMPILHADO)
+   VISÃO APP NO CELULAR - CORREÇÃO DOS BOTÕES INVISÍVEIS
    ============================================================ */
 @media (max-width: 900px) {
     .nav-header {
-        padding: 15px 0;
+        position: fixed !important;
+        height: auto !important; /* Deixa o menu crescer conforme o conteúdo */
+        padding: 15px 0 !important;
     }
 
     .nav-content {
-        flex-direction: column; /* Empilha: Logo > Botões */
-        gap: 15px;
+        flex-direction: column !important;
+        gap: 12px !important;
     }
 
-    .logo-area {
-        flex-direction: column; /* Logo em cima, Nome embaixo no mobile */
-        gap: 5px;
-    }
-
-    .logo-area img {
-        height: 50px;
-    }
-
-    .brand-name {
-        font-size: 1.2rem;
-    }
-
+    /* Forçamos os links a ficarem visíveis e organizados */
     .nav-links {
-        width: 100%;
-        justify-content: center;
-        gap: 10px;
-        flex-wrap: wrap; /* Para os botões não saírem da tela */
+        display: flex !important; /* GARANTE QUE NÃO ESTEJA NONE */
+        flex-direction: row !important; /* Lado a lado */
+        flex-wrap: wrap !important; /* Se não couber, quebra linha */
+        justify-content: center !important;
+        gap: 8px !important;
+        width: 100% !important;
+        opacity: 1 !important;
+        visibility: visible !important;
     }
 
     .nav-links a {
-        font-size: 0.75rem;
-        padding: 6px 10px;
-        background: rgba(255, 255, 255, 0.05);
-        border-radius: 6px;
-        border: 1px solid var(--border);
+        display: block !important;
+        font-size: 0.75rem !important;
+        color: #ffffff !important; /* Branco puro */
+        background: rgba(0, 255, 153, 0.1) !important; /* Fundo verde bem clarinho */
+        padding: 8px 12px !important;
+        border-radius: 8px !important;
+        border: 1px solid rgba(0, 255, 153, 0.3) !important;
+        text-align: center !important;
     }
 
+    /* Botão de Contato ganha destaque total no celular */
     .btn-nav {
         background: var(--primary) !important;
-        border: none;
+        color: #000 !important;
+        font-weight: 800 !important;
     }
 
-    /* Empurra o site para baixo no mobile para o menu não cobrir a foto */
+    /* IMPORTANTE: Aumentamos o respiro do topo para o site não sumir atrás do menu alto */
     main {
-        padding-top: 180px !important;
+        padding-top: 220px !important; 
     }
 }
 
