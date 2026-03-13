@@ -29,86 +29,92 @@ body { background-color: var(--dark-bg); color: #fff; font-family: 'Inter', sans
 .section-padding { padding: 80px 0; }
 .highlight { color: var(--primary); font-weight: 800; }
 
+a { text-decoration: none !important; border: none !important; outline: none !important; }
+
 /* ============================================================
-   2. HEADER & LOGO AREA (VERSÃO BLINDADA)
+   2. HEADER & LOGO AREA - RESET TOTAL
    ============================================================ */
 .nav-header {
-    position: fixed; 
-    top: 0; 
-    left: 0; 
-    width: 100%; 
-    padding: 12px 0;
-    background: rgba(5, 5, 10, 0.98); /* Quase opaco para o conteúdo não vazar por trás */
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-    z-index: 99999; /* VALOR ALTO: Garante que fique na frente de tudo */
-    border-bottom: 1px solid var(--border);
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 80px; /* Altura fixa para controle */
+    display: flex;
+    align-items: center;
+    background: #05050a !important; /* Fundo sólido para teste - depois voltamos o vidro */
+    border-bottom: 2px solid var(--primary) !important;
+    z-index: 999999 !important; /* Força máxima */
 }
 
-.nav-content { 
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center; 
+.nav-content {
+    width: 92%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.logo-area { 
-    display: flex; 
-    align-items: center; 
-    gap: 15px; 
-    text-decoration: none; /* Remove sublinhado se for link */
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none !important;
+    border: none !important;
 }
 
-.logo-area img { 
-    height: 50px; /* Reduzi um pouco para ficar mais elegante */
-    width: auto; 
+.logo-area img {
+    height: 40px;
+    width: auto;
 }
 
-.brand-name { 
-    font-size: 1.3rem; 
-    font-weight: 800; 
-    text-transform: uppercase; 
-    letter-spacing: 1px; 
-    color: #fff !important; 
+/* Forçando o Nome da Marca */
+.brand-name {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: #ffffff !important;
+    text-decoration: none !important;
 }
 
-.brand-name span { color: var(--primary); }
-
-.nav-links { 
-    display: flex; 
-    align-items: center; 
-    gap: 20px; 
+/* Os Links que sumiram */
+.nav-links {
+    display: flex !important; /* Garante que o flex exista */
+    align-items: center;
+    gap: 25px;
+    visibility: visible !important;
+    opacity: 1 !important;
 }
 
-.nav-links a { 
-    text-decoration: none; 
-    color: #fff !important; 
-    font-size: 0.85rem; 
-    font-weight: 600; 
-    transition: 0.3s; 
-}
-
-.nav-links a:hover { 
-    color: var(--primary) !important; 
-}
-
-.btn-nav { 
-    background: var(--primary); 
-    color: #000 !important; 
-    padding: 10px 20px; 
-    border-radius: 50px; 
-    font-weight: 800; 
-    box-shadow: 0 0 15px rgba(0, 255, 153, 0.3); 
+.nav-links a {
+    color: #ffffff !important;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none !important;
     transition: 0.3s;
 }
 
-.btn-nav:hover {
-    transform: scale(1.05);
+.nav-links a:hover {
+    color: var(--primary) !important;
 }
 
-/* IMPORTANTE: Adicione isso no seu @media de celular (max-width: 900px) */
-@media (max-width: 900px) {
-    .nav-links { display: none; } /* Esconde o menu para não quebrar no celular */
+/* Botão de Contato no Menu */
+.btn-nav {
+    background: var(--primary) !important;
+    color: #000000 !important;
+    padding: 10px 20px !important;
+    border-radius: 50px !important;
+    font-weight: 800 !important;
 }
+
+/* CORREÇÃO DO CONTEÚDO QUE SOBE: empurra o site para baixo do menu */
+main {
+    margin-top: 80px !important;
+}
+
+
 /* ============================================================
    3. HERO & NOVA FOTO SIMPLIFICADA
    ============================================================ */
