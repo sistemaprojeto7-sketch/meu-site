@@ -94,29 +94,53 @@ a { text-decoration: none !important; border: none !important; outline: none !im
 /* ============================================================
    AJUSTE MOBILE - ESTILO APP (DENTRO DA MEDIA QUERY)
    ============================================================ */
+/* ============================================================
+   AJUSTE MOBILE - ESTILO APP (DENTRO DA MEDIA QUERY)
+   ============================================================ */
 @media (max-width: 900px) {
-    /* Ajusta o espaçamento do topo especificamente para a seção "topo" no celular */
-    #topo.section-padding {
-        padding-top: 220px !important; /* Espaço suficiente para o menu de 3 linhas */
-        padding-bottom: 40px !important;
+    .nav-header {
+        padding: 15px 0;
     }
 
-    .intro-title {
-        font-size: 0.9rem !important; /* Reduz um pouco o título para não quebrar no celular */
-        letter-spacing: 2px !important;
+    .nav-content {
+        flex-direction: column !important; /* Empilha: Logo > Botões */
+        gap: 15px !important;
     }
 
-    .intro-desc {
-        font-size: 1.1rem !important; /* Ajuste de leitura para telas pequenas */
-        padding: 0 10px;
+    .logo-area {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .nav-links {
+        justify-content: center !important;
+        flex-wrap: wrap !important;
+        gap: 10px !important;
+        display: flex !important; /* MATA O DISPLAY NONE ANTIGO */
+    }
+
+    .nav-links a {
+        font-size: 0.75rem !important;
+        background: rgba(0, 255, 153, 0.1);
+        padding: 6px 12px;
+        border-radius: 6px;
+        border: 1px solid var(--border);
+    }
+
+    .btn-nav {
+        background: var(--primary) !important;
+        color: #000 !important;
+    }
+
+    /* ESSENCIAL: Empurra o Hero para baixo no mobile */
+    .hero {
+        padding-top: 240px !important;
     }
 }
 
-/* Ajuste para Notebook/Desktop */
+/* Ajuste Desktop */
 @media (min-width: 901px) {
-    #topo.section-padding {
-        padding-top: 140px !important; 
-    }
+    .hero { padding-top: 160px; }
 }
 
 /* ============================================================
