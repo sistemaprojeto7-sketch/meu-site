@@ -56,22 +56,20 @@ a { text-decoration: none !important; border: none !important; outline: none !im
     padding: 10px 0;
 }
 
-.logo-area {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
+/* --- AUMENTANDO O LOGO NO DESKTOP --- */
 .logo-area img {
-    height: 50px;
+    height: 70px; /* Aumentado de 60px para 70px */
     width: auto;
+    transition: 0.3s ease; /* Transição suave */
 }
 
 .brand-name {
-    font-size: 1.3rem;
+    font-size: 1.7rem; /* Aumentado de 1.5rem para 1.7rem */
     font-weight: 800;
     text-transform: uppercase;
+    letter-spacing: 1.5px; /* Um pouco mais de espaço entre as letras */
     color: #fff;
+    white-space: nowrap; /* Garante que o nome não quebre linha */
 }
 
 .brand-name span {
@@ -89,6 +87,31 @@ a { text-decoration: none !important; border: none !important; outline: none !im
     font-size: 0.85rem;
     font-weight: 600;
     transition: 0.3s;
+}
+
+/* --- DEVOLVENDO O VERDE AO BOTÃO DE CONTATO --- */
+.btn-nav {
+    background: var(--primary) !important;
+    color: #000000 !important; /* Texto preto para ler bem no fundo verde */
+    padding: 10px 22px !important;
+    border-radius: 50px !important;
+    font-weight: 800 !important;
+    border: none !important;
+    box-shadow: 0 0 15px rgba(0, 255, 153, 0.4) !important;
+}
+
+.btn-nav:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(0, 255, 153, 0.6) !important;
+}
+
+/* Garante que no Celular ele também fique verde */
+@media (max-width: 900px) {
+    .btn-nav {
+        background: var(--primary) !important;
+        color: #000 !important;
+        opacity: 1 !important;
+    }
 }
 
 /* --- AJUSTE APP NO CELULAR --- */
