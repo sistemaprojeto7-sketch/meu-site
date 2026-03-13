@@ -56,43 +56,21 @@ a { text-decoration: none !important; border: none !important; outline: none !im
     padding: 10px 0;
 }
 
-/* --- AUMENTANDO O LOGO NO DESKTOP --- */
-.logo-area img {
-    height: 70px; /* Aumentado de 60px para 70px */
-    width: auto;
-    transition: 0.3s ease; /* Transição suave */
-}
+/* LOGO E NOME (DESKTOP) */
+.logo-area { display: flex; align-items: center; gap: 15px; }
+.logo-area img { height: 75px !important; width: auto; transition: 0.3s; }
+.brand-name { font-size: 1.7rem; font-weight: 800; text-transform: uppercase; color: #fff; white-space: nowrap; }
+.brand-name span { color: var(--primary) !important; }
 
-.brand-name {
-    font-size: 1.7rem; /* Aumentado de 1.5rem para 1.7rem */
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 1.5px; /* Um pouco mais de espaço entre as letras */
-    color: #fff;
-    white-space: nowrap; /* Garante que o nome não quebre linha */
-}
+/* LINKS GERAL */
+.nav-links { display: flex !important; align-items: center; gap: 20px; }
+.nav-links a { color: #fff !important; font-size: 0.85rem; font-weight: 600; transition: 0.3s; }
+.nav-links a:hover { color: var(--primary); }
 
-.brand-name span {
-    color: var(--primary) !important;
-}
-
-.nav-links {
-    display: flex !important;
-    align-items: center;
-    gap: 20px;
-}
-
-.nav-links a {
-    color: #fff !important;
-    font-size: 0.85rem;
-    font-weight: 600;
-    transition: 0.3s;
-}
-
-/* --- DEVOLVENDO O VERDE AO BOTÃO DE CONTATO --- */
+/* BOTÃO DE CONTATO (ESTILO MESTRE) */
 .btn-nav {
     background: var(--primary) !important;
-    color: #000000 !important; /* Texto preto para ler bem no fundo verde */
+    color: #000000 !important;
     padding: 10px 22px !important;
     border-radius: 50px !important;
     font-weight: 800 !important;
@@ -100,31 +78,14 @@ a { text-decoration: none !important; border: none !important; outline: none !im
     box-shadow: 0 0 15px rgba(0, 255, 153, 0.4) !important;
 }
 
-.btn-nav:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 25px rgba(0, 255, 153, 0.6) !important;
-}
-
-/* Garante que no Celular ele também fique verde */
+/* ============================================================
+   AJUSTE MOBILE - TUDO AQUI DENTRO PARA NÃO DAR CONFLITO
+   ============================================================ */
 @media (max-width: 900px) {
-    .btn-nav {
-        background: var(--primary) !important;
-        color: #000 !important;
-        opacity: 1 !important;
-    }
-}
-
-/* --- AJUSTE APP NO CELULAR --- */
-@media (max-width: 900px) {
-    .nav-content {
-        flex-direction: column !important;
-        gap: 12px !important;
-    }
-
-    .logo-area {
-        flex-direction: column;
-        gap: 5px;
-    }
+    .nav-content { flex-direction: column !important; gap: 12px !important; }
+    .logo-area { flex-direction: column; gap: 5px; }
+    .logo-area img { height: 60px !important; } /* Logo imponente no celular */
+    .brand-name { font-size: 1.3rem; }
 
     .nav-links {
         justify-content: center !important;
@@ -132,12 +93,21 @@ a { text-decoration: none !important; border: none !important; outline: none !im
         gap: 10px !important;
     }
 
+    /* Estilo dos links normais no celular */
     .nav-links a {
         font-size: 0.75rem !important;
-        background: rgba(0, 255, 153, 0.1);
+        background: rgba(255, 255, 255, 0.05);
         padding: 6px 12px;
         border-radius: 6px;
         border: 1px solid var(--border);
+    }
+
+    /* FORÇA O BOTÃO DE CONTATO A SER VERDE NO CELULAR */
+    .nav-links a.btn-nav {
+        background: var(--primary) !important;
+        color: #000 !important;
+        border: none !important;
+        padding: 8px 18px !important;
     }
 }
 
