@@ -75,11 +75,11 @@ a { text-decoration: none !important; border: none !important; outline: none !im
 }
 
 .brand-name span {
-    color: var(--primary) !important; /* GARANTE O FLOW VERDE */
+    color: var(--primary) !important;
 }
 
 .nav-links {
-    display: flex !important; /* FORÇA A APARIÇÃO */
+    display: flex !important;
     align-items: center;
     gap: 20px;
 }
@@ -91,17 +91,11 @@ a { text-decoration: none !important; border: none !important; outline: none !im
     transition: 0.3s;
 }
 
-/* ============================================================
-   AJUSTE MOBILE - ESTILO APP (DENTRO DA MEDIA QUERY)
-   ============================================================ */
+/* --- AJUSTE APP NO CELULAR --- */
 @media (max-width: 900px) {
-    .nav-header {
-        padding: 15px 0;
-    }
-
     .nav-content {
-        flex-direction: column !important; /* Empilha: Logo > Botões */
-        gap: 15px !important;
+        flex-direction: column !important;
+        gap: 12px !important;
     }
 
     .logo-area {
@@ -113,7 +107,6 @@ a { text-decoration: none !important; border: none !important; outline: none !im
         justify-content: center !important;
         flex-wrap: wrap !important;
         gap: 10px !important;
-        display: flex !important; /* MATA O DISPLAY NONE ANTIGO */
     }
 
     .nav-links a {
@@ -123,21 +116,29 @@ a { text-decoration: none !important; border: none !important; outline: none !im
         border-radius: 6px;
         border: 1px solid var(--border);
     }
-
-    .btn-nav {
-        background: var(--primary) !important;
-        color: #000 !important;
-    }
-
-    /* ESSENCIAL: Empurra o Hero para baixo no mobile */
-    .hero {
-        padding-top: 240px !important;
-    }
 }
 
-/* Ajuste Desktop */
-@media (min-width: 901px) {
-    .hero { padding-top: 160px; }
+/* ============================================================
+   3. HERO & AJUSTE DE TELA
+   ============================================================ */
+main {
+    padding-top: 100px; /* Respiro para o menu no PC */
+}
+
+#topo.section-padding {
+    padding-top: 40px !important;
+    padding-bottom: 20px !important;
+}
+
+@media (max-width: 900px) {
+    main {
+        padding-top: 180px !important; /* Respiro maior no celular para o menu App */
+    }
+    
+    .intro-title {
+        font-size: 0.9rem !important;
+        line-height: 1.4;
+    }
 }
 
 /* ============================================================
