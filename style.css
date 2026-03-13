@@ -32,28 +32,28 @@ body { background-color: var(--dark-bg); color: #fff; font-family: 'Inter', sans
 a { text-decoration: none !important; border: none !important; outline: none !important; }
 
 /* ============================================================
-   2. HEADER & LOGO AREA (FIXO E RESPONSIVO)
+   2. HEADER & LOGO AREA (FIXO ESTILO APP)
    ============================================================ */
 .nav-header {
-    position: fixed;
+    position: fixed !important;
     top: 0;
     left: 0;
     width: 100%;
-    padding: 10px 0;
-    background: rgba(5, 5, 10, 0.95);
+    background: rgba(5, 5, 10, 0.98);
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
-    z-index: 10000; /* Garante que fique acima de tudo */
+    z-index: 10000;
     border-bottom: 1px solid var(--border);
 }
 
 .nav-content {
     display: flex;
-    justify-content: space-between; /* Logo na esquerda, Links na direita */
+    justify-content: space-between;
     align-items: center;
     width: 92%;
     max-width: 1200px;
     margin: auto;
+    padding: 10px 0;
 }
 
 .logo-area {
@@ -63,106 +63,81 @@ a { text-decoration: none !important; border: none !important; outline: none !im
 }
 
 .logo-area img {
-    height: 60px; /* Tamanho original que você gostava */
+    height: 50px;
     width: auto;
 }
 
 .brand-name {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: 800;
     text-transform: uppercase;
-    letter-spacing: 1px;
     color: #fff;
 }
 
 .brand-name span {
-    color: var(--primary); /* FLOW VERDE */
+    color: var(--primary) !important; /* GARANTE O FLOW VERDE */
 }
 
 .nav-links {
-    display: flex;
+    display: flex !important; /* FORÇA A APARIÇÃO */
     align-items: center;
     gap: 20px;
 }
 
 .nav-links a {
-    text-decoration: none;
-    color: #fff;
+    color: #fff !important;
     font-size: 0.85rem;
     font-weight: 600;
     transition: 0.3s;
-    white-space: nowrap;
-}
-
-.nav-links a:hover {
-    color: var(--primary);
-}
-
-.btn-nav {
-    background: var(--primary);
-    color: #000 !important;
-    padding: 8px 18px;
-    border-radius: 50px;
-    font-weight: 800;
-    box-shadow: 0 0 15px rgba(0, 255, 153, 0.3);
 }
 
 /* ============================================================
-   VISÃO APP NO CELULAR - CORREÇÃO DOS BOTÕES INVISÍVEIS
+   AJUSTE MOBILE - ESTILO APP (DENTRO DA MEDIA QUERY)
    ============================================================ */
 @media (max-width: 900px) {
     .nav-header {
-        position: fixed !important;
-        height: auto !important; /* Deixa o menu crescer conforme o conteúdo */
-        padding: 15px 0 !important;
+        padding: 15px 0;
     }
 
     .nav-content {
-        flex-direction: column !important;
-        gap: 12px !important;
+        flex-direction: column !important; /* Empilha: Logo > Botões */
+        gap: 15px !important;
     }
 
-    /* Forçamos os links a ficarem visíveis e organizados */
+    .logo-area {
+        flex-direction: column;
+        gap: 5px;
+    }
+
     .nav-links {
-        display: flex !important; /* GARANTE QUE NÃO ESTEJA NONE */
-        flex-direction: row !important; /* Lado a lado */
-        flex-wrap: wrap !important; /* Se não couber, quebra linha */
         justify-content: center !important;
-        gap: 8px !important;
-        width: 100% !important;
-        opacity: 1 !important;
-        visibility: visible !important;
+        flex-wrap: wrap !important;
+        gap: 10px !important;
+        display: flex !important; /* MATA O DISPLAY NONE ANTIGO */
     }
 
     .nav-links a {
-        display: block !important;
         font-size: 0.75rem !important;
-        color: #ffffff !important; /* Branco puro */
-        background: rgba(0, 255, 153, 0.1) !important; /* Fundo verde bem clarinho */
-        padding: 8px 12px !important;
-        border-radius: 8px !important;
-        border: 1px solid rgba(0, 255, 153, 0.3) !important;
-        text-align: center !important;
+        background: rgba(0, 255, 153, 0.1);
+        padding: 6px 12px;
+        border-radius: 6px;
+        border: 1px solid var(--border);
     }
 
-    /* Botão de Contato ganha destaque total no celular */
     .btn-nav {
         background: var(--primary) !important;
         color: #000 !important;
-        font-weight: 800 !important;
     }
 
-    /* IMPORTANTE: Aumentamos o respiro do topo para o site não sumir atrás do menu alto */
-    main {
-        padding-top: 220px !important; 
+    /* ESSENCIAL: Empurra o Hero para baixo no mobile */
+    .hero {
+        padding-top: 240px !important;
     }
 }
 
-/* Ajuste Desktop para não cobrir o topo */
+/* Ajuste Desktop */
 @media (min-width: 901px) {
-    main {
-        padding-top: 100px;
-    }
+    .hero { padding-top: 160px; }
 }
 /* ============================================================
    3. HERO & NOVA FOTO SIMPLIFICADA
