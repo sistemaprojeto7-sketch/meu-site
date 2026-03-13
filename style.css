@@ -32,19 +32,18 @@ body { background-color: var(--dark-bg); color: #fff; font-family: 'Inter', sans
 a { text-decoration: none !important; border: none !important; outline: none !important; }
 
 /* ============================================================
-   2. HEADER & LOGO AREA - RESET TOTAL
+   2. HEADER & LOGO AREA - VERSÃO HÍBRIDA (PC/APP-MOBILE)
    ============================================================ */
 .nav-header {
     position: fixed !important;
-    top: 0 !important;
-    left: 0 !important;
-    width: 100% !important;
-    height: 80px; /* Altura fixa para controle */
-    display: flex;
-    align-items: center;
-    background: #05050a !important; /* Fundo sólido para teste - depois voltamos o vidro */
-    border-bottom: 2px solid var(--primary) !important;
-    z-index: 999999 !important; /* Força máxima */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(5, 5, 10, 0.98);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    z-index: 999999;
+    border-bottom: 1px solid var(--border);
 }
 
 .nav-content {
@@ -54,64 +53,94 @@ a { text-decoration: none !important; border: none !important; outline: none !im
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 10px 0;
 }
 
 .logo-area {
     display: flex;
     align-items: center;
-    gap: 10px;
-    text-decoration: none !important;
-    border: none !important;
+    gap: 12px;
 }
 
 .logo-area img {
-    height: 40px;
+    height: 50px;
     width: auto;
 }
 
-/* Forçando o Nome da Marca */
 .brand-name {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     font-weight: 800;
-    color: #ffffff !important;
-    text-decoration: none !important;
+    color: #fff !important;
+    text-transform: uppercase;
 }
 
-/* Os Links que sumiram */
+.brand-name span { color: var(--primary) !important; }
+
 .nav-links {
-    display: flex !important; /* Garante que o flex exista */
-    align-items: center;
-    gap: 25px;
-    visibility: visible !important;
-    opacity: 1 !important;
+    display: flex;
+    gap: 20px;
 }
 
 .nav-links a {
-    color: #ffffff !important;
+    color: #fff !important;
     font-size: 0.85rem;
-    font-weight: 700;
+    font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    text-decoration: none !important;
-    transition: 0.3s;
 }
 
-.nav-links a:hover {
-    color: var(--primary) !important;
-}
+/* ============================================================
+   AJUSTE ESTILO APP (CELULAR)
+   ============================================================ */
+@media (max-width: 900px) {
+    .nav-header {
+        position: relative !important; /* No celular ele flui com o topo */
+        padding: 20px 0;
+    }
 
-/* Botão de Contato no Menu */
-.btn-nav {
-    background: var(--primary) !important;
-    color: #000000 !important;
-    padding: 10px 20px !important;
-    border-radius: 50px !important;
-    font-weight: 800 !important;
-}
+    .nav-content {
+        flex-direction: column; /* Empilha os blocos */
+        gap: 15px;
+    }
 
-/* CORREÇÃO DO CONTEÚDO QUE SOBE: empurra o site para baixo do menu */
-main {
-    margin-top: 80px !important;
+    .logo-area {
+        flex-direction: column; /* Logo em cima, Nome embaixo */
+        gap: 8px;
+    }
+
+    .logo-area img {
+        height: 60px; /* Logo maior no celular */
+    }
+
+    .brand-name {
+        font-size: 1.5rem; /* Nome em destaque embaixo da logo */
+    }
+
+    .nav-links {
+        display: flex !important; /* Garante que apareça no celular */
+        flex-wrap: wrap; /* Permite quebrar linha se for muitos botões */
+        justify-content: center;
+        gap: 12px;
+        width: 100%;
+        padding-top: 10px;
+        border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .nav-links a {
+        font-size: 0.75rem; /* Botões menores para caberem lado a lado */
+        background: rgba(255,255,255,0.05);
+        padding: 8px 12px;
+        border-radius: 8px;
+        border: 1px solid rgba(0, 255, 153, 0.2);
+    }
+
+    .btn-nav {
+        width: 100%; /* Botão de contato vira uma barra larga */
+        text-align: center;
+        margin-left: 0 !important;
+    }
+
+    /* Ajusta o topo do site para não ficar um buraco */
+    main { padding-top: 20px !important; }
 }
 
 
