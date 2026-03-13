@@ -30,23 +30,85 @@ body { background-color: var(--dark-bg); color: #fff; font-family: 'Inter', sans
 .highlight { color: var(--primary); font-weight: 800; }
 
 /* ============================================================
-   2. HEADER & LOGO AREA
+   2. HEADER & LOGO AREA (VERSÃO BLINDADA)
    ============================================================ */
 .nav-header {
-    position: fixed; width: 100%; padding: 10px 0;
-    background: rgba(5, 5, 10, 0.95); backdrop-filter: blur(15px);
-    z-index: 1000; border-bottom: 1px solid var(--border);
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    padding: 12px 0;
+    background: rgba(5, 5, 10, 0.98); /* Quase opaco para o conteúdo não vazar por trás */
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    z-index: 99999; /* VALOR ALTO: Garante que fique na frente de tudo */
+    border-bottom: 1px solid var(--border);
 }
-.nav-content { display: flex; justify-content: space-between; align-items: center; }
-.logo-area { display: flex; align-items: center; gap: 15px; }
-.logo-area img { height: 60px; width: auto; }
-.brand-name { font-size: 1.5rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; color: #fff; }
-.brand-name span { color: var(--primary); }
-.nav-links { display: flex; align-items: center; gap: 15px; }
-.nav-links a { text-decoration: none; color: #fff; font-size: 0.85rem; font-weight: 600; transition: 0.3s; }
-.nav-links a:hover { color: var(--primary); }
-.btn-nav { background: var(--primary); color: #000 !important; padding: 8px 16px; border-radius: 50px; font-weight: 800; box-shadow: 0 0 15px rgba(0, 255, 153, 0.3); }
 
+.nav-content { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+}
+
+.logo-area { 
+    display: flex; 
+    align-items: center; 
+    gap: 15px; 
+    text-decoration: none; /* Remove sublinhado se for link */
+}
+
+.logo-area img { 
+    height: 50px; /* Reduzi um pouco para ficar mais elegante */
+    width: auto; 
+}
+
+.brand-name { 
+    font-size: 1.3rem; 
+    font-weight: 800; 
+    text-transform: uppercase; 
+    letter-spacing: 1px; 
+    color: #fff !important; 
+}
+
+.brand-name span { color: var(--primary); }
+
+.nav-links { 
+    display: flex; 
+    align-items: center; 
+    gap: 20px; 
+}
+
+.nav-links a { 
+    text-decoration: none; 
+    color: #fff !important; 
+    font-size: 0.85rem; 
+    font-weight: 600; 
+    transition: 0.3s; 
+}
+
+.nav-links a:hover { 
+    color: var(--primary) !important; 
+}
+
+.btn-nav { 
+    background: var(--primary); 
+    color: #000 !important; 
+    padding: 10px 20px; 
+    border-radius: 50px; 
+    font-weight: 800; 
+    box-shadow: 0 0 15px rgba(0, 255, 153, 0.3); 
+    transition: 0.3s;
+}
+
+.btn-nav:hover {
+    transform: scale(1.05);
+}
+
+/* IMPORTANTE: Adicione isso no seu @media de celular (max-width: 900px) */
+@media (max-width: 900px) {
+    .nav-links { display: none; } /* Esconde o menu para não quebrar no celular */
+}
 /* ============================================================
    3. HERO & NOVA FOTO SIMPLIFICADA
    ============================================================ */
