@@ -32,10 +32,10 @@ body { background-color: var(--dark-bg); color: #fff; font-family: 'Inter', sans
 a { text-decoration: none !important; border: none !important; outline: none !important; }
 
 /* ============================================================
-   2. HEADER & LOGO AREA - VERSÃO HÍBRIDA (PC/APP-MOBILE)
+   2. HEADER & LOGO AREA - FIXO ESTILO APP
    ============================================================ */
 .nav-header {
-    position: fixed !important;
+    position: fixed !important; /* MANTÉM FIXO SEMPRE */
     top: 0;
     left: 0;
     width: 100%;
@@ -56,38 +56,67 @@ a { text-decoration: none !important; border: none !important; outline: none !im
     padding: 10px 0;
 }
 
-.logo-area {
-    display: flex;
-    align-items: center;
-    gap: 12px;
+/* --- AJUSTE PARA O MODO APP NO CELULAR --- */
+@media (max-width: 900px) {
+    .nav-header {
+        /* Removemos o 'relative' e mantemos o 'fixed' do topo */
+        padding: 10px 0;
+    }
+
+    .nav-content {
+        flex-direction: column; /* Empilha: Logo > Nome > Botões */
+        gap: 10px;
+    }
+
+    .logo-area {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .logo-area img {
+        height: 45px; /* Tamanho ajustado para não ocupar a tela toda */
+    }
+
+    .brand-name {
+        font-size: 1.1rem;
+    }
+
+    .nav-links {
+        display: flex !important;
+        flex-wrap: wrap; 
+        justify-content: center;
+        gap: 8px;
+        width: 100%;
+        padding-top: 8px;
+        border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .nav-links a {
+        font-size: 0.7rem;
+        background: rgba(0, 255, 153, 0.05);
+        padding: 6px 10px;
+        border-radius: 6px;
+        border: 1px solid rgba(0, 255, 153, 0.2);
+        white-space: nowrap;
+    }
+
+    .btn-nav {
+        background: var(--primary) !important;
+        color: #000 !important;
+        padding: 6px 12px !important;
+        width: auto !important; /* Mantém como botão na linha se couber */
+    }
+
+    /* ESSENCIAL: Empurra o site para baixo para o menu fixo não cobrir o Hero */
+    main { 
+        padding-top: 180px !important; 
+    }
 }
 
-.logo-area img {
-    height: 50px;
-    width: auto;
+/* Ajuste para Desktop (Notebook) */
+@media (min-width: 901px) {
+    main { padding-top: 100px; }
 }
-
-.brand-name {
-    font-size: 1.3rem;
-    font-weight: 800;
-    color: #fff !important;
-    text-transform: uppercase;
-}
-
-.brand-name span { color: var(--primary) !important; }
-
-.nav-links {
-    display: flex;
-    gap: 20px;
-}
-
-.nav-links a {
-    color: #fff !important;
-    font-size: 0.85rem;
-    font-weight: 600;
-    text-transform: uppercase;
-}
-
 /* ============================================================
    AJUSTE ESTILO APP (CELULAR)
    ============================================================ */
